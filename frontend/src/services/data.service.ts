@@ -1,3 +1,5 @@
+import { GET_ALL_POSTS } from '../graphql/queries';
+
 const URL = process.env.STRAPIBASEURL;
 
 export class DataService {
@@ -10,26 +12,7 @@ export class DataService {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        query: `{
-          blogposts{
-            data{
-              attributes{
-                title
-                description
-                postbody
-                slug
-                splash {
-                  data {
-                    attributes {
-                      url
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        `,
+        query: GET_ALL_POSTS,
       }),
     };
     const res = await fetch(`${URL}/graphql`, fetchParams);

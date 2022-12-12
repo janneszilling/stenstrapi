@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blogpost",
     "pluralName": "blogposts",
-    "displayName": "Blogposts"
+    "displayName": "Blogposts",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,21 +20,20 @@
       "type": "string",
       "required": true
     },
-    "postbody": {
-      "type": "richtext"
+    "urlSlug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     },
-    "slug": {
-      "type": "string"
+    "content": {
+      "type": "richtext"
     },
     "splash": {
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
