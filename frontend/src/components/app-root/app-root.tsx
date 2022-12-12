@@ -23,6 +23,7 @@ export class AppRoot {
           <div key={i}>
             <h3>{post.attributes.title}</h3>
             <p>{post.attributes.description}</p>
+            <p>{post.attributes.urlSlug}</p>
           </div>
         ))}
 
