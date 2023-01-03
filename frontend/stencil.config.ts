@@ -5,7 +5,6 @@ import dotenv from 'rollup-plugin-dotenv';
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.scss',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   outputTargets: [
@@ -16,5 +15,11 @@ export const config: Config = {
       baseUrl: 'https://myapp.local/',
     },
   ],
-  plugins: [sass(), dotenv()],
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/theme/fonts.scss', 'src/theme/font.sizes.scss'],
+    }),
+    dotenv(),
+  ],
+  globalStyle: 'src/global/global.scss',
 };
