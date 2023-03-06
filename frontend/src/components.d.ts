@@ -17,6 +17,8 @@ export namespace Components {
     interface BlogComponent {
         "page"?: string;
     }
+    interface BlogList {
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -43,11 +45,18 @@ declare global {
         prototype: HTMLBlogComponentElement;
         new (): HTMLBlogComponentElement;
     };
+    interface HTMLBlogListElement extends Components.BlogList, HTMLStencilElement {
+    }
+    var HTMLBlogListElement: {
+        prototype: HTMLBlogListElement;
+        new (): HTMLBlogListElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "blog-component": HTMLBlogComponentElement;
+        "blog-list": HTMLBlogListElement;
     }
 }
 declare namespace LocalJSX {
@@ -61,11 +70,14 @@ declare namespace LocalJSX {
     interface BlogComponent {
         "page"?: string;
     }
+    interface BlogList {
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "blog-component": BlogComponent;
+        "blog-list": BlogList;
     }
 }
 export { LocalJSX as JSX };
@@ -76,6 +88,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
+            "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
         }
     }
 }

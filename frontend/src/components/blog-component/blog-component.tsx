@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, Build } from '@stencil/core';
-import { fileNotFound } from '../../global/site-structure-utils';
+import { Component, Host, h, Prop } from '@stencil/core';
 import { dataSvc } from '../../services/data.service';
 
 @Component({
@@ -9,39 +8,26 @@ import { dataSvc } from '../../services/data.service';
 })
 export class BlogComponent {
   @Prop() page?: string;
-  data?;
   content?: string;
-
-  async componentWillLoad() {
-    this.data = await dataSvc.getData();
-  }
+  postContent?: any;
 
   async componentWillRender() {
     if (this.page) {
-      const post = this.data.find(blog => blog.attributes.urlSlug === this.page);
-      console.log('post', post);
-
-      if (!Build.isBrowser && !post) {
-        fileNotFound();
-        return;
-      }
-
-      if (post) {
-        document.title = post.attributes.title;
-        this.content = post.attributes.description;
-      }
+      this.postContent = await dataSvc.getIndividualPost(this.page.replace('/', ''));
+      console.log('post', this.postContent);
     }
   }
 
   render() {
-    if (!this.data || !this.content) return <div>Error</div>;
-    const post = this.data;
-    const content = this.content;
+    // if (!this.data || !this.content) return;
+    // const post = this.data;
+    // const content = this.content;
 
     return (
       <Host>
-        <h1>{post.title}</h1>
-        <p>{content}</p>
+        <h1>It works! Look into the console</h1>
+        <p>{this.postContent.title}</p>
+        <p>{this.postContent.description}</p>
         <slot></slot>
       </Host>
     );

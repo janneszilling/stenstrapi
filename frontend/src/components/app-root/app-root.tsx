@@ -1,5 +1,5 @@
 import { Component, h } from '@stencil/core';
-import { dataSvc } from '../../services/data.service';
+// import { dataSvc } from '../../services/data.service';
 
 @Component({
   tag: 'app-root',
@@ -8,34 +8,39 @@ import { dataSvc } from '../../services/data.service';
 })
 export class AppRoot {
   data?: any;
+  //post?: any;
 
-  async componentWillLoad() {
-    this.data = await dataSvc.getData();
-  }
+  // async componentWillLoad() {
+  //   this.data = await dataSvc.getAllPosts();
+  //   console.log('list', this.data);
+  // }
 
   render() {
     return (
       <div>
         <header>
-          <h1>Stencil App Starter</h1>
+          <stencil-route-link url="/">
+            <h1>StenStrapi</h1>
+          </stencil-route-link>
+          <stencil-route-link url="/blog">Blog</stencil-route-link>
         </header>
-        {this.data.map((post, i) => (
-          <div key={i}>
-            <stencil-route-link url={post.attributes.urlSlug} class="post-title">
+        {/* {this.data.map((post, i) => (
+          <stencil-route-link url={post.attributes.urlSlug} class="post-title">
+            <div key={i}>
               <h3>{post.attributes.title}</h3>
-            </stencil-route-link>
-            <p>{post.attributes.description}</p>
-            <p>{post.attributes.urlSlug}</p>
-          </div>
-        ))}
-        <div class="brown" style={{ width: '100px', height: '100px' }}></div>
+
+              <p>{post.attributes.description}</p>
+              <p>{post.attributes.urlSlug}</p>
+            </div>
+          </stencil-route-link>
+        ))} */}
 
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/blog/:pageName" routeRender={({ match }) => <blog-component page={match!.url}></blog-component>} />
-              <stencil-route url="/profile/:name" component="app-profile" />
+              <stencil-route url="/blog" component="blog-list" />
+              <stencil-route url="/:pageName" routeRender={({ match }) => <blog-component page={match!.url}></blog-component>} />
             </stencil-route-switch>
           </stencil-router>
         </main>

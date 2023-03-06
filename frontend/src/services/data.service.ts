@@ -1,11 +1,11 @@
-import { GET_ALL_POSTS } from '../graphql/queries';
+import { GET_ALL_POSTS, GET_POST_BY_SLUG } from '../graphql/queries';
 
 const URL = process.env.STRAPIBASEURL;
 
 export class DataService {
   constructor() {}
 
-  async getData() {
+  async getAllPosts() {
     const fetchParams = {
       method: 'post',
       headers: {
@@ -18,6 +18,24 @@ export class DataService {
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
     return data.data.blogposts.data;
+  }
+
+  async getIndividualPost(slug) {
+    const fetchParams = {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: GET_POST_BY_SLUG,
+        variables: {
+          slugUrl: slug,
+        },
+      }),
+    };
+    const res = await fetch(`${URL}/graphql`, fetchParams);
+    const data = await res.json();
+    return data.data.blogposts.data[0].attributes;
   }
 }
 
