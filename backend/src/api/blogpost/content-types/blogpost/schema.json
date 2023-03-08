@@ -37,11 +37,20 @@
       ]
     },
     "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "ckcontent": {
+      "type": "customField",
+      "options": {
+        "preset": "standard",
+        "output": "HTML"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
