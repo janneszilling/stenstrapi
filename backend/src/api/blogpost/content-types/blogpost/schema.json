@@ -29,11 +29,19 @@
       "type": "richtext"
     },
     "splash": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "attachments": {
+      "allowedTypes": [
+        "files"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": true
     }
   }
 }
