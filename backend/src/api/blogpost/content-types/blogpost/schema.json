@@ -25,9 +25,6 @@
       "targetField": "title",
       "required": true
     },
-    "content": {
-      "type": "richtext"
-    },
     "splash": {
       "type": "media",
       "multiple": false,
@@ -44,13 +41,33 @@
         "files"
       ]
     },
-    "ckcontent": {
+    "content": {
       "type": "customField",
       "options": {
         "preset": "standard",
         "output": "HTML"
       },
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "estimatedReadingTimeInMinutes": {
+      "type": "integer",
+      "default": 5,
+      "min": 1,
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "author": {
+      "type": "string",
+      "default": "Sebastian Stolze",
+      "required": true
     }
   }
 }

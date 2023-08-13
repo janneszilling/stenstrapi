@@ -2,7 +2,7 @@
   display: block;
   font-family: 'Inter', sans-serif;
   width: calc(100% - 60px);
-  margin: 100px auto 30px auto;
+  margin: 30px auto 30px auto;
 }
 
 .blog-list-wrapper {
@@ -95,11 +95,11 @@
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 40px;
+    margin: 0;
   }
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    margin: 0 20px;
+    margin: 0;
   }
 }

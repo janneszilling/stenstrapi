@@ -5,12 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil-community/router";
 export namespace Components {
+    interface AppAboutUs {
+    }
     interface AppHome {
     }
-    interface AppProfile {
-        "match": MatchResults;
+    interface AppImprint {
+    }
+    interface AppPrivacy {
     }
     interface AppRoot {
     }
@@ -19,19 +21,36 @@ export namespace Components {
     }
     interface BlogList {
     }
+    interface CBanner {
+        "hidden": boolean;
+    }
+    interface LatestBlogList {
+    }
 }
 declare global {
+    interface HTMLAppAboutUsElement extends Components.AppAboutUs, HTMLStencilElement {
+    }
+    var HTMLAppAboutUsElement: {
+        prototype: HTMLAppAboutUsElement;
+        new (): HTMLAppAboutUsElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLAppImprintElement extends Components.AppImprint, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLAppImprintElement: {
+        prototype: HTMLAppImprintElement;
+        new (): HTMLAppImprintElement;
+    };
+    interface HTMLAppPrivacyElement extends Components.AppPrivacy, HTMLStencilElement {
+    }
+    var HTMLAppPrivacyElement: {
+        prototype: HTMLAppPrivacyElement;
+        new (): HTMLAppPrivacyElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -51,19 +70,38 @@ declare global {
         prototype: HTMLBlogListElement;
         new (): HTMLBlogListElement;
     };
+    interface HTMLCBannerElement extends Components.CBanner, HTMLStencilElement {
+    }
+    var HTMLCBannerElement: {
+        prototype: HTMLCBannerElement;
+        new (): HTMLCBannerElement;
+    };
+    interface HTMLLatestBlogListElement extends Components.LatestBlogList, HTMLStencilElement {
+    }
+    var HTMLLatestBlogListElement: {
+        prototype: HTMLLatestBlogListElement;
+        new (): HTMLLatestBlogListElement;
+    };
     interface HTMLElementTagNameMap {
+        "app-about-us": HTMLAppAboutUsElement;
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
+        "app-imprint": HTMLAppImprintElement;
+        "app-privacy": HTMLAppPrivacyElement;
         "app-root": HTMLAppRootElement;
         "blog-component": HTMLBlogComponentElement;
         "blog-list": HTMLBlogListElement;
+        "c-banner": HTMLCBannerElement;
+        "latest-blog-list": HTMLLatestBlogListElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppAboutUs {
+    }
     interface AppHome {
     }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface AppImprint {
+    }
+    interface AppPrivacy {
     }
     interface AppRoot {
     }
@@ -72,23 +110,36 @@ declare namespace LocalJSX {
     }
     interface BlogList {
     }
+    interface CBanner {
+        "hidden"?: boolean;
+    }
+    interface LatestBlogList {
+    }
     interface IntrinsicElements {
+        "app-about-us": AppAboutUs;
         "app-home": AppHome;
-        "app-profile": AppProfile;
+        "app-imprint": AppImprint;
+        "app-privacy": AppPrivacy;
         "app-root": AppRoot;
         "blog-component": BlogComponent;
         "blog-list": BlogList;
+        "c-banner": CBanner;
+        "latest-blog-list": LatestBlogList;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-about-us": LocalJSX.AppAboutUs & JSXBase.HTMLAttributes<HTMLAppAboutUsElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-imprint": LocalJSX.AppImprint & JSXBase.HTMLAttributes<HTMLAppImprintElement>;
+            "app-privacy": LocalJSX.AppPrivacy & JSXBase.HTMLAttributes<HTMLAppPrivacyElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
             "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
+            "c-banner": LocalJSX.CBanner & JSXBase.HTMLAttributes<HTMLCBannerElement>;
+            "latest-blog-list": LocalJSX.LatestBlogList & JSXBase.HTMLAttributes<HTMLLatestBlogListElement>;
         }
     }
 }

@@ -1,11 +1,21 @@
 export const GET_ALL_POSTS = `
 {
-  blogposts {
+  blogposts(sort: "date:desc") {
     data {
       attributes {
         title
         description
         urlSlug
+        estimatedReadingTimeInMinutes
+        date
+        tags {
+          data {
+            attributes {
+              title
+            }
+          }
+        }
+        author
         splash {
           data {
             attributes {
@@ -26,6 +36,7 @@ export const GET_POST_BY_SLUG = `
           title
           description
           urlSlug
+          date
           splash {
             data {
               attributes {
@@ -33,7 +44,38 @@ export const GET_POST_BY_SLUG = `
               }
             }
           }
+          content
         }
       }
     }
     }`;
+
+export const GET_THE_LATEST_POSTS = `
+{
+  blogposts(sort: "date:desc", pagination: {limit: 3}) {
+    data {
+      attributes {
+        title
+        description
+        urlSlug
+        estimatedReadingTimeInMinutes
+        date
+        tags {
+          data {
+            attributes {
+              title
+            }
+          }
+        }
+        author
+        splash {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  }`;

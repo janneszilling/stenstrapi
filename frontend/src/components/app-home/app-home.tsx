@@ -2,21 +2,45 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
-  styleUrl: 'app-home.css',
+  styleUrl: 'app-home.scss',
   shadow: true,
 })
 export class AppHome {
   render() {
     return (
       <div class="app-home">
-        <p>
-          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
-          <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-        </p>
-
-        <stencil-route-link url="/profile/stencil">
-          <button>Profile page</button>
-        </stencil-route-link>
+        <div class="home-header">
+          <p class="subheading">Der Wirtschafts Blog</p>
+          <h1>Let’s do investing</h1>
+          <div class="horizontal">
+            <stencil-route-link url="/blog">
+              <button class="primary-btn">Zum Blog</button>
+            </stencil-route-link>
+            <stencil-route-link url="#newsletter">
+              <button class="secondary-btn">Newsletter</button>
+            </stencil-route-link>
+          </div>
+        </div>
+        <div class="lastest-posts">
+          <latest-blog-list></latest-blog-list>
+        </div>
+        {/* <div class="newsletter-section" id="newsletter">
+          <div class="newsletter-wrapper">
+            <h2>
+              Abonniere den
+              <br /> Newsletter.
+            </h2>
+            <div class="submit-wrapper">
+              <div>
+                <label htmlFor="email" id="newsletter-label">
+                  Deine E-Mail
+                </label>
+                <input id="newsletter-mail" type="email" name="email" placeholder="jane.doe@email.com" />
+              </div>
+              <button class="tertiary-btn">Abonnieren</button>
+            </div>
+          </div>
+        </div> */}
       </div>
     );
   }

@@ -6,6 +6,10 @@
   --font-size-5: 1.375rem;
   --font-size-6: 1.125rem;
   --font-size-7: 1rem;
+
+  --font-blg-heading: 2.875rem;
+  --font-blg-subheading: 1.375rem;
+  --font-blg-subsubheading: 1.125rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -22,12 +26,16 @@
 
 @media screen and (min-width: 1440px) {
   :root {
-    --font-size-1: 6.25rem;
-    --font-size-2: 5rem;
-    --font-size-3: 3.625rem;
-    --font-size-4: 2.375rem;
-    --font-size-5: 1.625rem;
-    --font-size-6: 1.375rem;
-    --font-size-7: 1.125rem;
+    --font-size-1: 6.125rem;
+    --font-size-2: 4.875rem;
+    --font-size-3: 3.5rem;
+    --font-size-4: 2.25rem;
+    --font-size-5: 1.5rem;
+    --font-size-6: 1.25rem;
+    --font-size-7: 1rem;
+
+    --font-blg-heading: 3rem;
+    --font-blg-subheading: 1.5rem;
+    --font-blg-subsubheading: 1.25rem;
   }
 }

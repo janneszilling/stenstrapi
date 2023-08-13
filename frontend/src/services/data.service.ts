@@ -1,4 +1,4 @@
-import { GET_ALL_POSTS, GET_POST_BY_SLUG } from '../graphql/queries';
+import { GET_ALL_POSTS, GET_POST_BY_SLUG, GET_THE_LATEST_POSTS } from '../graphql/queries';
 
 const URL = process.env.STRAPIBASEURL;
 
@@ -36,6 +36,21 @@ export class DataService {
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
     return data.data.blogposts.data[0].attributes;
+  }
+
+  async getTheLatestPosts() {
+    const fetchParams = {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: GET_THE_LATEST_POSTS,
+      }),
+    };
+    const res = await fetch(`${URL}/graphql`, fetchParams);
+    const data = await res.json();
+    return data.data.blogposts.data;
   }
 }
 

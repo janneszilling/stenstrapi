@@ -2,17 +2,16 @@ import { Component, Host, h, getAssetPath } from '@stencil/core';
 import { dataSvc } from '../../services/data.service';
 
 @Component({
-  tag: 'blog-list',
-  styleUrl: 'blog-list.scss',
+  tag: 'latest-blog-list',
+  styleUrl: 'latest-blog-list.scss',
   shadow: true,
 })
-export class BlogList {
+export class LatestBlogList {
   data?: any;
 
   async componentWillLoad() {
-    this.data = await dataSvc.getAllPosts();
+    this.data = await dataSvc.getTheLatestPosts();
     console.log('list', this.data);
-    console.log('list', this.data[0].attributes.splash.data);
   }
 
   render() {
