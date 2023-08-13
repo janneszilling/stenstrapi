@@ -7,6 +7,40 @@
 
   Any global CSS variables should also be applied here.
 */
+@font-face {
+  font-family: 'Inter-Regular', sans-serif;
+  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Medium', sans-serif;
+  src: url(../assets/fonts/Inter-Medium.ttf);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-SemiBold', sans-serif;
+  src: url(../assets/fonts/Inter-SemiBold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Bold', sans-serif;
+  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gloock-Regular', serif;
+  src: url(../assets/fonts/Gloock-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
 
 * {
   box-sizing: inherit;
@@ -15,7 +49,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Inter-Regular', sans-serif;
   font-size: 16px;
   background-color: #f8f8f8;
   color: #0d213a;

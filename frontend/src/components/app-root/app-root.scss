@@ -9,7 +9,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter-Regular', sans-serif;
   z-index: 9999;
 
   .nav {
@@ -79,7 +79,7 @@ header {
         justify-content: center;
         margin-left: 8px;
         background: #3285e7;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter-Regular', sans-serif;
         font-weight: 500;
         font-size: 8px;
         border-radius: 3px;
@@ -181,7 +181,7 @@ footer {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 40px 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter-Regular', sans-serif;
 
     @media screen and (max-width: 1200px) {
     }
@@ -264,7 +264,7 @@ footer {
           justify-content: center;
           margin-left: 8px;
           background: #3285e7;
-          font-family: 'Inter', sans-serif;
+          font-family: 'Inter-Regular', sans-serif;
           font-weight: 500;
           font-size: 8px;
           border-radius: 3px;
