@@ -16,9 +16,9 @@ export class AppHome {
             <stencil-route-link url="/blog">
               <button class="primary-btn">Zum Blog</button>
             </stencil-route-link>
-            <stencil-route-link url="#newsletter">
+            {/* <stencil-route-link url="#newsletter">
               <button class="secondary-btn">Newsletter</button>
-            </stencil-route-link>
+            </stencil-route-link> */}
           </div>
         </div>
         <div class="lastest-posts">

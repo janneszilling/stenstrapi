@@ -27,7 +27,10 @@ export class CookieBanner {
       <Host hidden={this.hidden}>
         <div class="c-banner">
           <div class="c-banner-wrapper">
-            <p>Wir verwenden Cookies, um Ihnen das beste Nutzererlebnis bieten zu können. Wenn Sie diese hier akzeptiren, nehmen wir an, dass Sie damit einverstanden sind.</p>
+            <p>
+              Wir verwenden Cookies und Tools für das beste Nutzererlebnis. Ihre Zustimmung sichert eine uneingeschränkte Nutzung der Seite. Ohne explizierte Zustimmung werden
+              keine Cookies/Tools verwendet. Infos in der Datenschutzerklärung.
+            </p>
             <div class="horizontal">
               <button
                 class="primary-btn"
@@ -37,8 +40,9 @@ export class CookieBanner {
               >
                 Akzeptieren
               </button>
-
-              <button class="tertiary-btn">Mehr erfahren</button>
+              <stencil-route-link url="/datenschutz">
+                <button class="tertiary-btn">Mehr erfahren</button>
+              </stencil-route-link>
             </div>
           </div>
         </div>
