@@ -107,7 +107,7 @@ export class AppRoot {
               <div>
                 <span class="small">LEGAL</span>
                 <stencil-route-link url="/impressum">Impressum</stencil-route-link>
-                <stencil-route-link url="/datenschutz">Datzenschutz</stencil-route-link>
+                <stencil-route-link url="/datenschutz">Datenschutz</stencil-route-link>
                 <stencil-route-link url="/datenschutz#cookies">Cookies</stencil-route-link>
               </div>
             </div>
