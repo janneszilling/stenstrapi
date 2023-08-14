@@ -7,12 +7,9 @@ import { dataSvc } from '../../services/data.service';
   shadow: true,
 })
 export class LatestBlogList {
-  data: any = null;
+  data?: any;
 
   async componentWillLoad() {
-    if (this.data !== null) {
-      return;
-    }
     this.data = await dataSvc.getTheLatestPosts();
     console.log('list', this.data);
   }
@@ -21,7 +18,7 @@ export class LatestBlogList {
     return (
       <Host>
         <div class="blog-list-wrapper">
-          {this.data !== null && this.data.length > 0 ? (
+          {!this.data ? (
             this.data?.map((post, i) => (
               <stencil-route-link url={post.attributes.urlSlug}>
                 <div class="post-preview" key={i}>
