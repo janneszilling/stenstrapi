@@ -1,5 +1,5 @@
 import { Component, Host, h, getAssetPath } from '@stencil/core';
-import { dataSvc } from '../../services/data.service';
+//import { dataSvc } from '../../services/data.service';
 
 @Component({
   tag: 'blog-list',
