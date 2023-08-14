@@ -19,7 +19,7 @@ export class LatestBlogList {
     return (
       <Host>
         <div class="blog-list-wrapper">
-          {!this.data ? (
+          {!this.data || this.data === null || this.data === undefined ? (
             <h1>Keine Beiträge</h1>
           ) : (
             this.data?.map((post, i) => (
