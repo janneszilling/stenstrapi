@@ -11,8 +11,6 @@ export class BlogList {
 
   async componentWillLoad() {
     this.data = await dataSvc.getAllPosts();
-    console.log('list', this.data);
-    console.log('list', this.data[0].attributes.splash.data);
   }
 
   render() {
