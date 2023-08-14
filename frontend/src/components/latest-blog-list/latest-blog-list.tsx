@@ -7,9 +7,12 @@ import { dataSvc } from '../../services/data.service';
   shadow: true,
 })
 export class LatestBlogList {
-  data: any;
+  data: any = null;
 
   async componentWillLoad() {
+    if (this.data !== null) {
+      return;
+    }
     this.data = await dataSvc.getTheLatestPosts();
     console.log('list', this.data);
   }
