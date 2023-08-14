@@ -10,7 +10,7 @@ export class BlogList {
   data?: any;
 
   async componentWillLoad() {
-    this.data = await dataSvc.getAllPosts();
+    this.data = null; //await dataSvc.getAllPosts();
   }
 
   render() {

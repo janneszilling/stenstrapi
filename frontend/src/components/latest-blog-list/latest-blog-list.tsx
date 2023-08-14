@@ -10,8 +10,7 @@ export class LatestBlogList {
   data?: any;
 
   async componentWillLoad() {
-    this.data = await dataSvc.getTheLatestPosts();
-    console.log('list', this.data);
+    this.data = null; //await dataSvc.getTheLatestPosts();
   }
 
   render() {
