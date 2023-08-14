@@ -11,9 +11,6 @@ export class LatestBlogList {
 
   async componentWillLoad() {
     this.data = await dataSvc.getTheLatestPosts();
-    if (this.data === undefined || this.data === null) {
-      this.data = null;
-    }
     console.log('list', this.data);
   }
 
@@ -21,7 +18,7 @@ export class LatestBlogList {
     return (
       <Host>
         <div class="blog-list-wrapper">
-          {!this.data || this.data === null || this.data === undefined ? (
+          {this.data === null ? (
             <h1>Keine Beiträge</h1>
           ) : (
             this.data?.map((post, i) => (
