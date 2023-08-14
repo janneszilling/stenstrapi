@@ -19,6 +19,8 @@ export class LatestBlogList {
       <Host>
         <div class="blog-list-wrapper">
           {!this.data ? (
+            <h1>Keine Beiträge</h1>
+          ) : (
             this.data?.map((post, i) => (
               <stencil-route-link url={post.attributes.urlSlug}>
                 <div class="post-preview" key={i}>
@@ -50,10 +52,6 @@ export class LatestBlogList {
                 </div>
               </stencil-route-link>
             ))
-          ) : (
-            <div class="blog-list-wrapper">
-              <h1>Keine Beiträge</h1>
-            </div>
           )}
         </div>
       </Host>
