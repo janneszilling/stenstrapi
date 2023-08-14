@@ -17,6 +17,9 @@ export class DataService {
     };
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
+    if (data.errors) {
+      return null;
+    }
     return data.data.blogposts.data;
   }
 
@@ -35,6 +38,9 @@ export class DataService {
     };
     const res = await fetch(`${URL}/graphql`, fetchParams);
     const data = await res.json();
+    if (data.errors) {
+      return null;
+    }
     return data.data.blogposts.data[0].attributes;
   }
 

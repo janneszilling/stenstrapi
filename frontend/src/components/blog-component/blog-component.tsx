@@ -69,22 +69,26 @@ export class BlogComponent {
   render() {
     return (
       <Host>
-        <div class="post-wrapper">
-          {/* <div class="contents-wrapper">
+        {this.articleHead === null ? (
+          <h1>Beitrag nicht vorhanden</h1>
+        ) : (
+          <div class="post-wrapper">
+            {/* <div class="contents-wrapper">
             <div class="contents">
               <h3>Inhaltsverzeichnis</h3>
               {this.tableOfContents}
             </div>
           </div> */}
-          <div class="post-content">
-            <div class="splash-img">
-              <img src={this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '../../assets/placeholder-a.png'} />
+            <div class="post-content">
+              <div class="splash-img">
+                <img src={this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '../../assets/placeholder-a.png'} />
+              </div>
+              <h1>{this.articleHead.title}</h1>
+              <h3>{this.articleHead.description}</h3>
+              <div class="article" innerHTML={this.htmlElements}></div>
             </div>
-            <h1>{this.articleHead.title}</h1>
-            <h3>{this.articleHead.description}</h3>
-            <div class="article" innerHTML={this.htmlElements}></div>
           </div>
-        </div>
+        )}
       </Host>
     );
   }

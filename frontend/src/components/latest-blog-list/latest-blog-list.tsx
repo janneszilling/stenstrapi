@@ -19,7 +19,7 @@ export class LatestBlogList {
       <Host>
         <div class="blog-list-wrapper">
           {this.data === null ? (
-            <h1>Keine Beiträge</h1>
+            <h1>Keine Beiträge vorhanden</h1>
           ) : (
             this.data?.map((post, i) => (
               <stencil-route-link url={post.attributes.urlSlug}>
