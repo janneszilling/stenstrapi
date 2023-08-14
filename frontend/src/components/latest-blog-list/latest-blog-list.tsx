@@ -7,7 +7,7 @@ import { dataSvc } from '../../services/data.service';
   shadow: true,
 })
 export class LatestBlogList {
-  data?: any;
+  data: any;
 
   async componentWillLoad() {
     this.data = await dataSvc.getTheLatestPosts();
