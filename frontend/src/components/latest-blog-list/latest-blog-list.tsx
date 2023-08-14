@@ -18,8 +18,8 @@ export class LatestBlogList {
     return (
       <Host>
         <div class="blog-list-wrapper">
-          {this.data !== null && this.data === 'data' ? (
-            this.data.map((post, i) => (
+          {this.data !== null && this.data.length > 0 ? (
+            this.data?.map((post, i) => (
               <stencil-route-link url={post.attributes.urlSlug}>
                 <div class="post-preview" key={i}>
                   <div class="splash-img">
