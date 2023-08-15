@@ -16,16 +16,9 @@
     font-family: 'Inter', sans-serif;
     letter-spacing: 5px;
     text-transform: uppercase;
+    text-align: center;
     color: white;
     margin: 200px 0 50px 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    height: 50vh;
-
-    .subheading {
-      margin: 150px 0 50px 0;
-    }
   }
 
   h1 {
@@ -34,6 +27,18 @@
     font-weight: 400;
     color: white;
     margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+
+    .subheading {
+      margin: 150px 0 50px 0;
+    }
+
+    h1 {
+      margin: 0 0 150px 0;
+    }
   }
 }
 
