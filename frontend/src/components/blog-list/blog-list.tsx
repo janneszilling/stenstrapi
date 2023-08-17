@@ -1,5 +1,5 @@
 import { Component, Host, h, getAssetPath } from '@stencil/core';
-//import { dataSvc } from '../../services/data.service';
+import { dataSvc } from '../../services/data.service';
 
 @Component({
   tag: 'blog-list',
@@ -10,7 +10,7 @@ export class BlogList {
   data?: any;
 
   async componentWillLoad() {
-    this.data = null; //await dataSvc.getAllPosts();
+    this.data = await dataSvc.getAllPosts();
   }
 
   render() {

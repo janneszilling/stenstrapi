@@ -1,6 +1,6 @@
 import { Component, h, getAssetPath } from '@stencil/core';
 import { cookieSvc } from '../../services/cookie.service';
-// import { dataSvc } from '../../services/data.service';
+//import { dataSvc } from '../../services/data.service';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',

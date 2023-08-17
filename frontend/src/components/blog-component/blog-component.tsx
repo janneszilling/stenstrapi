@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
-//import { dataSvc } from '../../services/data.service';
+import { dataSvc } from '../../services/data.service';
 import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
@@ -25,9 +25,9 @@ export class BlogComponent {
 
   async componentWillRender() {
     if (this.page) {
-      //const queryResult = await dataSvc.getIndividualPost(this.page.replace('/', ''));
-      this.articleHead = null; //await queryResult;
-      const htmlString = null; //await queryResult.content;
+      const queryResult = await dataSvc.getIndividualPost(this.page.replace('/', ''));
+      this.articleHead = await queryResult;
+      const htmlString = await queryResult.content;
       this.htmlString = htmlString;
     }
   }

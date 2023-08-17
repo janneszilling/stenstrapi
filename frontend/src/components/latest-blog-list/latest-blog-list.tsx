@@ -1,5 +1,5 @@
 import { Component, Host, h, getAssetPath } from '@stencil/core';
-//import { dataSvc } from '../../services/data.service';
+import { dataSvc } from '../../services/data.service';
 
 @Component({
   tag: 'latest-blog-list',
@@ -10,7 +10,7 @@ export class LatestBlogList {
   data?: any;
 
   async componentWillLoad() {
-    this.data = null; //await dataSvc.getTheLatestPosts();
+    this.data = await dataSvc.getTheLatestPosts();
   }
 
   render() {
