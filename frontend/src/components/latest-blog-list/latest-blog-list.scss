@@ -73,6 +73,8 @@
       h3 {
         font-size: var(--font-size-4);
         margin: 0 0 0 0;
+        overflow: hidden;
+        hyphens: auto;
       }
 
       p {
