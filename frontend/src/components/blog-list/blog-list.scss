@@ -73,6 +73,9 @@
       h3 {
         font-size: var(--font-size-4);
         margin: 0 0 0 0;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
       }
 
       p {

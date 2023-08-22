@@ -80,12 +80,18 @@
       font-size: var(--font-blg-heading);
       font-family: 'Inter', sans-serif;
       font-weight: 600;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
     }
 
     h2 {
       font-size: var(--font-blg-subheading);
       font-family: 'Inter', sans-serif;
       font-weight: 500;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
     }
 
     h3 {
@@ -93,6 +99,9 @@
       font-size: var(--font-blg-subsubheading);
       font-family: 'Inter', sans-serif;
       font-weight: 500;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
     }
 
     p img {
