@@ -1,6 +1,6 @@
 export const GET_ALL_POSTS = `
 {
-  blogposts(sort: "date:desc") {
+  blogposts(sort: "date:desc", pagination: { limit: 100 }) {
     data {
       attributes {
         title
