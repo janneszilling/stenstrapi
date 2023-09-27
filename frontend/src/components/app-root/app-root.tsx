@@ -12,6 +12,14 @@ export class AppRoot {
   private menu?: HTMLDivElement;
   private links?: HTMLDivElement;
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidRender() {
+    this.scrollToTop();
+  }
+
   setCookies() {
     const cookieBanner = document.querySelector('.cookie-banner');
     cookieBanner.classList.add('hide');

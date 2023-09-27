@@ -13,6 +13,14 @@ export class BlogList {
     this.data = await dataSvc.getAllPosts();
   }
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidRender() {
+    this.scrollToTop();
+  }
+
   render() {
     return (
       <Host>

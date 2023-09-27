@@ -7,8 +7,13 @@ import { metaSvc } from '../../services/injectMeta.service';
   shadow: true,
 })
 export class AppAboutUs {
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   async componentDidRender() {
     await metaSvc.injectMetaTags('Über uns', 'Wer steckt hinter Stockrain? Hier erfährst du mehr über uns.', '../../assets/placeholder-a.png', 'about');
+    this.scrollToTop();
   }
 
   render() {

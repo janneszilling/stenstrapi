@@ -7,8 +7,13 @@ import { metaSvc } from '../../services/injectMeta.service';
   shadow: true,
 })
 export class AppImprint {
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   async componentDidRender() {
     await metaSvc.injectMetaTags('Impressum', 'Impressum von Stockrain. Hier findest du alle rechtlichen Informationen zu Stockrain.', '../../assets/placeholder-b.png', 'imprint');
+    this.scrollToTop();
   }
 
   render() {

@@ -7,6 +7,10 @@ import { metaSvc } from '../../services/injectMeta.service';
   shadow: true,
 })
 export class AppHome {
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   async componentDidRender() {
     await metaSvc.injectMetaTags(
       'Der Wirtschafts Blog',
@@ -14,6 +18,8 @@ export class AppHome {
       '../../assets/placeholder-b.png',
       'home',
     );
+
+    this.scrollToTop();
   }
 
   render() {

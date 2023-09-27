@@ -14,6 +14,10 @@ export class BlogComponent {
   @State() articleHead: any;
   @State() htmlElements: any;
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   async componentDidRender() {
     await metaSvc.injectMetaTags(
       this.articleHead.title,
@@ -21,6 +25,8 @@ export class BlogComponent {
       this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '../../assets/placeholder-b.png',
       this.page,
     );
+
+    this.scrollToTop();
   }
 
   async componentWillRender() {

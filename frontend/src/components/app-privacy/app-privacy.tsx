@@ -7,6 +7,10 @@ import { metaSvc } from '../../services/injectMeta.service';
   shadow: true,
 })
 export class AppPrivacy {
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   async componentDidRender() {
     await metaSvc.injectMetaTags(
       'Datenschutzerklärung',
@@ -14,6 +18,8 @@ export class AppPrivacy {
       '../../assets/placeholder-b.png',
       'datenschutz',
     );
+
+    this.scrollToTop();
   }
 
   render() {
