@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
   tag: 'app-home',
@@ -6,12 +7,21 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class AppHome {
+  async componentDidRender() {
+    await metaSvc.injectMetaTags(
+      'Der Wirtschafts Blog',
+      'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
+      '../../assets/placeholder-b.png',
+      'home',
+    );
+  }
+
   render() {
     return (
       <div class="app-home">
         <div class="home-header">
           <p class="subheading">Der Wirtschafts Blog</p>
-          <h1>Let’s do investing</h1>
+          <h1>Educate Economy</h1>
           <div class="horizontal">
             <stencil-route-link url="/blog">
               <button class="primary-btn">Zum Blog</button>

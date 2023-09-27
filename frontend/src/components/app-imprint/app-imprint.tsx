@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
   tag: 'app-imprint',
@@ -6,6 +7,10 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class AppImprint {
+  async componentDidRender() {
+    await metaSvc.injectMetaTags('Impressum', 'Impressum von Stockrain. Hier findest du alle rechtlichen Informationen zu Stockrain.', '../../assets/placeholder-b.png', 'imprint');
+  }
+
   render() {
     return (
       <div class="privacy-wrapper">

@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
   tag: 'app-about-us',
@@ -6,6 +7,10 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class AppAboutUs {
+  async componentDidRender() {
+    await metaSvc.injectMetaTags('Über uns', 'Wer steckt hinter Stockrain? Hier erfährst du mehr über uns.', '../../assets/placeholder-a.png', 'about');
+  }
+
   render() {
     return (
       <div class="about-wrapper">

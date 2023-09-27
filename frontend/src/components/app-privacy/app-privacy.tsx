@@ -1,4 +1,5 @@
 import { Component, h } from '@stencil/core';
+import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
   tag: 'app-privacy',
@@ -6,6 +7,15 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class AppPrivacy {
+  async componentDidRender() {
+    await metaSvc.injectMetaTags(
+      'Datenschutzerklärung',
+      'Datenschutzerklärung von Stockrain. Hier findest du alle rechtlichen Informationen zu Stockrain.',
+      '../../assets/placeholder-b.png',
+      'datenschutz',
+    );
+  }
+
   render() {
     return (
       <div class="privacy-wrapper">
