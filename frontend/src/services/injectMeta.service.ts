@@ -79,7 +79,7 @@ export class MetaService {
     document.head.appendChild(metaTwitterDescription);
 
     const metaTwitterImage = document.createElement('meta');
-    metaTwitterImage.setAttribute('name', 'twitter:image');
+    metaTwitterImage.setAttribute('name', 'twitter:image:src');
     metaTwitterImage.setAttribute('content', `${splash}`);
     document.head.appendChild(metaTwitterImage);
   }
