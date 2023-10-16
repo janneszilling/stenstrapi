@@ -19,11 +19,6 @@ export class MetaService {
     document.head.appendChild(siteDescription);
 
     //Twitter card
-    const metaTwitterCard = document.createElement('meta');
-    metaTwitterCard.setAttribute('name', 'twitter:card');
-    metaTwitterCard.setAttribute('content', 'summary');
-    document.head.appendChild(metaTwitterCard);
-
     const metaTwitterSite = document.createElement('meta');
     metaTwitterSite.setAttribute('name', 'twitter:site');
     metaTwitterSite.setAttribute('content', '@stockraininvest');
