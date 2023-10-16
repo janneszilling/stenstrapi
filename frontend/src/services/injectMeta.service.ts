@@ -39,7 +39,7 @@ export class MetaService {
 
     const metaType = document.createElement('meta');
     metaType.setAttribute('property', 'og:type');
-    metaType.setAttribute('content', 'article');
+    metaType.setAttribute('content', 'website');
     document.head.appendChild(metaType);
 
     const metaLocale = document.createElement('meta');
