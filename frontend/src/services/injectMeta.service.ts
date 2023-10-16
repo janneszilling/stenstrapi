@@ -13,14 +13,16 @@ export class MetaService {
     document.title = `${title} | stockrain`;
     document.head.appendChild(metaTitle);
 
-    const metaDescription = document.createElement('meta');
     const siteDescription = document.createElement('meta');
+    siteDescription.setAttribute('name', 'description');
+    siteDescription.setAttribute('content', description);
+    document.head.appendChild(siteDescription);
+
+    //Social tags
+    const metaDescription = document.createElement('meta');
     metaDescription.setAttribute('property', 'og:description');
     metaDescription.setAttribute('content', description);
     document.head.appendChild(metaDescription);
-    siteDescription.setAttribute('name', 'Description');
-    siteDescription.setAttribute('content', description);
-    document.head.appendChild(siteDescription);
 
     const metaUrl = document.createElement('meta');
     metaUrl.setAttribute('property', 'og:url');
