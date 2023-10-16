@@ -19,13 +19,6 @@ export class BlogComponent {
   }
 
   async componentDidRender() {
-    await metaSvc.injectMetaTags(
-      this.articleHead.title,
-      this.articleHead.description,
-      this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '../../assets/placeholder-b.png',
-      this.page,
-    );
-
     this.scrollToTop();
   }
 
@@ -35,6 +28,13 @@ export class BlogComponent {
       this.articleHead = await queryResult;
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
+
+      await metaSvc.injectMetaTags(
+        this.articleHead.title,
+        this.articleHead.description,
+        this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '../../assets/placeholder-b.png',
+        this.page,
+      );
     }
   }
 
