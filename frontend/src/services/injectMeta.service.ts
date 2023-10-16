@@ -7,12 +7,6 @@ export class MetaService {
     metaIndex.setAttribute('content', 'index');
     document.head.appendChild(metaIndex);
 
-    const metaTitle = document.createElement('meta');
-    metaTitle.setAttribute('property', 'og:title');
-    metaTitle.setAttribute('content', title);
-    document.title = `${title} | stockrain`;
-    document.head.appendChild(metaTitle);
-
     const siteDescription = document.createElement('meta');
     siteDescription.setAttribute('name', 'description');
     siteDescription.setAttribute('content', description);
@@ -34,17 +28,28 @@ export class MetaService {
     metaTwitterTitle.setAttribute('content', `${title} | stockrain`);
     document.head.appendChild(metaTwitterTitle);
 
+    const metaTwitterTextTitle = document.createElement('meta');
+    metaTwitterTextTitle.setAttribute('name', 'twitter:text:title');
+    metaTwitterTextTitle.setAttribute('content', title);
+    document.head.appendChild(metaTwitterTextTitle);
+
     const metaTwitterDescription = document.createElement('meta');
     metaTwitterDescription.setAttribute('name', 'twitter:description');
     metaTwitterDescription.setAttribute('content', description);
     document.head.appendChild(metaTwitterDescription);
 
     const metaTwitterImage = document.createElement('meta');
-    metaTwitterImage.setAttribute('name', 'twitter:image:src');
+    metaTwitterImage.setAttribute('name', 'twitter:image');
     metaTwitterImage.setAttribute('content', `${splash}`);
     document.head.appendChild(metaTwitterImage);
 
     //Social tags
+    const metaTitle = document.createElement('meta');
+    metaTitle.setAttribute('property', 'og:title');
+    metaTitle.setAttribute('content', title);
+    document.title = `${title} | stockrain`;
+    document.head.appendChild(metaTitle);
+
     const metaDescription = document.createElement('meta');
     metaDescription.setAttribute('property', 'og:description');
     metaDescription.setAttribute('content', description);
