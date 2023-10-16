@@ -18,6 +18,37 @@ export class MetaService {
     siteDescription.setAttribute('content', description);
     document.head.appendChild(siteDescription);
 
+    //Twitter card
+    const metaTwitterCard = document.createElement('meta');
+    metaTwitterCard.setAttribute('name', 'twitter:card');
+    metaTwitterCard.setAttribute('content', 'summary');
+    document.head.appendChild(metaTwitterCard);
+
+    const metaTwitterSite = document.createElement('meta');
+    metaTwitterSite.setAttribute('name', 'twitter:site');
+    metaTwitterSite.setAttribute('content', '@stockraininvest');
+    document.head.appendChild(metaTwitterSite);
+
+    const metaTwitterCreator = document.createElement('meta');
+    metaTwitterCreator.setAttribute('name', 'twitter:creator');
+    metaTwitterCreator.setAttribute('content', '@stockraininvest');
+    document.head.appendChild(metaTwitterCreator);
+
+    const metaTwitterTitle = document.createElement('meta');
+    metaTwitterTitle.setAttribute('name', 'twitter:title');
+    metaTwitterTitle.setAttribute('content', `${title} | stockrain`);
+    document.head.appendChild(metaTwitterTitle);
+
+    const metaTwitterDescription = document.createElement('meta');
+    metaTwitterDescription.setAttribute('name', 'twitter:description');
+    metaTwitterDescription.setAttribute('content', description);
+    document.head.appendChild(metaTwitterDescription);
+
+    const metaTwitterImage = document.createElement('meta');
+    metaTwitterImage.setAttribute('name', 'twitter:image:src');
+    metaTwitterImage.setAttribute('content', `${splash}`);
+    document.head.appendChild(metaTwitterImage);
+
     //Social tags
     const metaDescription = document.createElement('meta');
     metaDescription.setAttribute('property', 'og:description');
@@ -53,37 +84,6 @@ export class MetaService {
     metaSiteName.setAttribute('property', 'og:site_name');
     metaSiteName.setAttribute('content', `${title} | stockrain`);
     document.head.appendChild(metaSiteName);
-
-    //Twitter card
-    const metaTwitterCard = document.createElement('meta');
-    metaTwitterCard.setAttribute('name', 'twitter:card');
-    metaTwitterCard.setAttribute('content', 'summary_large_image');
-    document.head.appendChild(metaTwitterCard);
-
-    const metaTwitterSite = document.createElement('meta');
-    metaTwitterSite.setAttribute('name', 'twitter:site');
-    metaTwitterSite.setAttribute('content', '@stockraininvest');
-    document.head.appendChild(metaTwitterSite);
-
-    const metaTwitterCreator = document.createElement('meta');
-    metaTwitterCreator.setAttribute('name', 'twitter:creator');
-    metaTwitterCreator.setAttribute('content', '@stockraininvest');
-    document.head.appendChild(metaTwitterCreator);
-
-    const metaTwitterTitle = document.createElement('meta');
-    metaTwitterTitle.setAttribute('name', 'twitter:title');
-    metaTwitterTitle.setAttribute('content', `${title} | stockrain`);
-    document.head.appendChild(metaTwitterTitle);
-
-    const metaTwitterDescription = document.createElement('meta');
-    metaTwitterDescription.setAttribute('name', 'twitter:description');
-    metaTwitterDescription.setAttribute('content', description);
-    document.head.appendChild(metaTwitterDescription);
-
-    const metaTwitterImage = document.createElement('meta');
-    metaTwitterImage.setAttribute('name', 'twitter:image:src');
-    metaTwitterImage.setAttribute('content', `${splash}`);
-    document.head.appendChild(metaTwitterImage);
   }
 }
 
