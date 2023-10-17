@@ -28,7 +28,7 @@ export class BlogComponent {
       injectMetaTags(this.articleHead.title, this.articleHead.description, this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '', this.page);
       document.title = `${this.articleHead.title} | Stockrain`;
       document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
-      document.querySelector("link[rel='canonical']").setAttribute('href', `https://www.stockrain.de${this.page}`);
+      //document.querySelector("link[rel='canonical']").setAttribute('href', `https://www.stockrain.de${this.page}`);
     }
   }
 
