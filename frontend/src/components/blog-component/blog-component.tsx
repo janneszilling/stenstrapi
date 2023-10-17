@@ -28,9 +28,8 @@ export class BlogComponent {
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
 
-      document.title = `${this.articleHead.title} | Stockrain`;
-
       injectMetaTags(this.articleHead.title, this.articleHead.description, this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '', this.page);
+      document.title = `${this.articleHead.title} | Stockrain`;
     }
   }
 

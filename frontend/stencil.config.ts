@@ -15,6 +15,10 @@ export const config: Config = {
       baseUrl: 'https://myapp.local/',
       prerenderConfig: 'services/prerender.config.ts',
     },
+    {
+      type: 'dist-hydrate-script',
+      dir: 'dist/prerender',
+    },
   ],
   plugins: [
     sass({
