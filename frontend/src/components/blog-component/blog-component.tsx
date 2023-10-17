@@ -28,7 +28,6 @@ export class BlogComponent {
       injectMetaTags(this.articleHead.title, this.articleHead.description, this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '', this.page);
       document.title = `${this.articleHead.title} | Stockrain`;
       document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
-      //document.querySelector("link[rel='canonical']").setAttribute('href', `https://www.stockrain.de${this.page}`);
     }
   }
 
@@ -97,11 +96,6 @@ export class BlogComponent {
 }
 
 const injectMetaTags = (title, description, splash, page) => {
-  const metaIndex = document.createElement('meta');
-  metaIndex.setAttribute('name', 'robots');
-  metaIndex.setAttribute('content', 'index');
-  document.head.appendChild(metaIndex);
-
   createOgTag('og:title', `${title} | Stockrain`);
   createOgTag('og:description', description);
   createOgTag('og:url', `https://www.stockrain.de${page}`);
