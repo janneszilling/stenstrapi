@@ -17,10 +17,6 @@ export class BlogComponent {
     window.scrollTo(0, 0);
   }
 
-  async componentDidRender() {
-    this.scrollToTop();
-  }
-
   async componentWillRender() {
     if (this.page) {
       const queryResult = await dataSvc.getIndividualPost(this.page.replace('/', ''));
@@ -30,7 +26,12 @@ export class BlogComponent {
 
       injectMetaTags(this.articleHead.title, this.articleHead.description, this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '', this.page);
       document.title = `${this.articleHead.title} | Stockrain`;
+      document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
     }
+  }
+
+  componentDidRender() {
+    this.scrollToTop();
   }
 
   @Watch('htmlString')
