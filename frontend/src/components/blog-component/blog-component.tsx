@@ -5,7 +5,6 @@ import { dataSvc } from '../../services/data.service';
 @Component({
   tag: 'blog-component',
   styleUrl: 'blog-component.scss',
-  shadow: true,
 })
 export class BlogComponent {
   @Prop() page?: string;
