@@ -29,6 +29,8 @@ export class BlogComponent {
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
 
+      document.title = `${this.articleHead.title} | Stockrain`;
+
       metaSvc.injectMetaTags(
         this.articleHead.title,
         this.articleHead.description,
