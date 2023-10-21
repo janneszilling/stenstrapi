@@ -4,6 +4,7 @@ import { cookieSvc } from '../../services/cookie.service';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',
+  shadow: true,
 })
 export class AppRoot {
   data?: any;
