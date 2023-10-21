@@ -6,7 +6,6 @@ import Helmet from '@stencil-community/helmet';
 @Component({
   tag: 'blog-component',
   styleUrl: 'blog-component.scss',
-  shadow: false,
 })
 export class BlogComponent {
   @Prop() page?: string;
