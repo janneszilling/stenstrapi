@@ -13,8 +13,8 @@ export class AppHome {
     injectMetaTags(
       'Der Wirtschafts Blog',
       'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
-      'https://www.stockrain.de/assets/placeholder-b.png',
-      'https://www.stockrain.de/home',
+      'https://www.stockrain.de/assets/meta-img.png',
+      '/home',
     );
 
     document.title = 'Der Wirtschafts Blog | Stockrain';
