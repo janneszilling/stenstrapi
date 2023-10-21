@@ -3,7 +3,6 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
-  shadow: true,
 })
 export class AppHome {
   scrollToTop() {
@@ -15,8 +14,10 @@ export class AppHome {
       'Der Wirtschafts Blog',
       'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
       'https://www.stockrain.de/assets/placeholder-b.png',
-      'home',
+      'https://www.stockrain.de/home',
     );
+
+    document.title = 'Der Wirtschafts Blog | Stockrain';
 
     this.scrollToTop();
   }
