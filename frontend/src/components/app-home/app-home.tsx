@@ -9,7 +9,7 @@ export class AppHome {
     window.scrollTo(0, 0);
   }
 
-  async componentDidRender() {
+  async componentWillRender() {
     injectMetaTags(
       'Der Wirtschafts Blog',
       'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
