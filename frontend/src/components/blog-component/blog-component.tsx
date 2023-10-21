@@ -101,7 +101,7 @@ const injectMetaTags = (title, description, splash, page) => {
   createOgTag('og:url', `https://www.stockrain.de${page}`);
   createOgTag('og:image', `${splash}`);
   createTwitterTag('twitter:card', `summary`);
-  createTwitterTag('twitter:title', title);
+  //createTwitterTag('twitter:title', title);
   createTwitterTag('twitter:description', description);
   createTwitterTag('twitter:image', `${splash}`);
   createTwitterTag('twitter:creator', `@stockraininvest`);
