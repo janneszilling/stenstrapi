@@ -1,7 +1,6 @@
 import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 import { dataSvc } from '../../services/data.service';
 //import { metaSvc } from '../../services/injectMeta.service';
-import Helmet from '@stencil-community/helmet';
 
 @Component({
   tag: 'blog-component',
@@ -25,9 +24,10 @@ export class BlogComponent {
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
 
-      // injectMetaTags(this.articleHead.title, this.articleHead.description, this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '', this.page);
-      // document.title = `${this.articleHead.title} | Stockrain`;
-      // document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
+      const metaData = this.articleHead;
+      injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
+      document.title = `${metaData.title} | Stockrain`;
+      document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
     }
   }
 
@@ -74,21 +74,6 @@ export class BlogComponent {
           <h1>Beitrag nicht vorhanden</h1>
         ) : (
           <div class="post-wrapper">
-            <Helmet>
-              <title>{`${this.articleHead.title} | Stockrain`}</title>
-              <meta name="description" content={`${this.articleHead.description}`} />
-              <meta property="og:title" content={`${this.articleHead.title} | Stockrain`} />
-              <meta property="og:description" content={`${this.articleHead.description}`} />
-              <meta property="og:url" content={`https://www.stockrain.de${this.page}`} />
-              <meta property="og:image" content={`${this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : ''}`} />
-              <meta name="twitter:card" content="summary" />
-              <meta name="twitter:title" content={`${this.articleHead.title} | Stockrain`} />
-              <meta name="twitter:description" content={`${this.articleHead.description}`} />
-              <meta name="twitter:image" content={`${this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : ''}`} />
-              <meta name="twitter:creator" content="@stockraininvest" />
-
-              <meta property="og:type" content="website" />
-            </Helmet>
             {/* <div class="contents-wrapper">
             <div class="contents">
               <h3>Inhaltsverzeichnis</h3>
@@ -110,40 +95,40 @@ export class BlogComponent {
   }
 }
 
-// const injectMetaTags = (title, description, splash, page) => {
-//   createOgTag('og:title', `${title} | Stockrain`);
-//   createOgTag('og:description', description);
-//   createOgTag('og:url', `https://www.stockrain.de${page}`);
-//   createOgTag('og:image', `${splash}`);
-//   createTwitterTag('twitter:card', `summary`);
-//   createTwitterTag('twitter:title', title);
-//   createTwitterTag('twitter:description', description);
-//   createTwitterTag('twitter:image', `${splash}`);
-//   createTwitterTag('twitter:creator', `@stockraininvest`);
-// };
+const injectMetaTags = (title, description, splash, page) => {
+  createOgTag('og:title', `${title} | Stockrain`);
+  createOgTag('og:description', description);
+  createOgTag('og:url', `https://www.stockrain.de${page}`);
+  createOgTag('og:image', `${splash}`);
+  createTwitterTag('twitter:card', `summary`);
+  createTwitterTag('twitter:title', title);
+  createTwitterTag('twitter:description', description);
+  createTwitterTag('twitter:image', `${splash}`);
+  createTwitterTag('twitter:creator', `@stockraininvest`);
+};
 
-// const createOgTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[property="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//   }
-// };
+const createOgTag = (type: string, content: string) => {
+  let el = document.head.querySelector(`meta[property="${type}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute('property', type);
+    el.setAttribute('content', content);
+    document.head.appendChild(el);
+  } else {
+    el.setAttribute('property', type);
+    el.setAttribute('content', content);
+  }
+};
 
-// const createTwitterTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[name="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//   }
-// };
+const createTwitterTag = (type: string, content: string) => {
+  let el = document.head.querySelector(`meta[name="${type}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute('name', type);
+    el.setAttribute('content', content);
+    document.head.appendChild(el);
+  } else {
+    el.setAttribute('name', type);
+    el.setAttribute('content', content);
+  }
+};
