@@ -19,10 +19,6 @@ export class AppHome {
 
     document.title = 'Der Wirtschafts Blog | Stockrain';
 
-    document.head.querySelector('meta[name="twitter:card"]').setAttribute('content', 'summary');
-    document.head.querySelector('meta[name="twitter:title"]').setAttribute('content', 'Der Wirtschafts Blog | Stockrain');
-    document.head.querySelector('meta[name="og:title"]').setAttribute('content', 'Der Wirtschafts Blog | Stockrain');
-
     this.scrollToTop();
   }
 
