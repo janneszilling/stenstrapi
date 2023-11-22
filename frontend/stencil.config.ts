@@ -10,12 +10,11 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      // comment the following line to disable service workers in production
       serviceWorker: {
         unregister: true,
       },
-      baseUrl: 'https://myapp.local/',
-      prerenderConfig: 'services/prerender.config.ts',
+      baseUrl: 'https://stockrain.de/',
+      prerenderConfig: './prerender.config.js',
     },
     {
       type: 'dist-hydrate-script',
