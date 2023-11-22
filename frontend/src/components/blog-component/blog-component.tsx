@@ -38,6 +38,8 @@ export class BlogComponent {
   }
 
   componentDidLoad() {
+    document.title = `${this.articleHead.title} | Stockrain`;
+
     const twitterCard = document.createElement('meta');
     twitterCard.name = 'twitter:card';
     twitterCard.content = 'summary';
