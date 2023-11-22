@@ -5,7 +5,7 @@ import { dataSvc } from '../../services/data.service';
 @Component({
   tag: 'blog-component',
   styleUrl: 'blog-component.scss',
-  shadow: false,
+  shadow: true,
 })
 export class BlogComponent {
   @Element() el: HTMLElement;
@@ -37,13 +37,9 @@ export class BlogComponent {
       twitterCard.name = 'twitter:card';
       twitterCard.content = 'summary';
 
-      console.log(this.articleHead.title);
-
       const titleTag = document.createElement('meta');
       titleTag.setAttribute('property', 'og:title');
       titleTag.content = this.articleHead.title;
-
-      console.log(titleTag.content);
 
       const descriptionTag = document.createElement('meta');
       descriptionTag.setAttribute('property', 'og:description');
