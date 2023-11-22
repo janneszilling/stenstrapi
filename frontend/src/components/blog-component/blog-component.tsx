@@ -42,6 +42,8 @@ export class BlogComponent {
       titleTag.setAttribute('property', 'og:title');
       titleTag.content = this.articleHead.title;
 
+      console.log(titleTag.content);
+
       const descriptionTag = document.createElement('meta');
       descriptionTag.setAttribute('property', 'og:description');
       descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
