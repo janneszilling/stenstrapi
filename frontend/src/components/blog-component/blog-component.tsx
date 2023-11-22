@@ -19,7 +19,7 @@ export class BlogComponent {
     window.scrollTo(0, 0);
   }
 
-  async componentWillRender() {
+  async componentWillLoad() {
     if (this.page) {
       const queryResult = await dataSvc.getIndividualPost(this.page.replace('/', ''));
       this.articleHead = await queryResult;
@@ -30,6 +30,33 @@ export class BlogComponent {
       // injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
       // document.title = `${metaData.title} | Stockrain`;
       // document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
+      document.title = `${this.articleHead.title} | Stockrain`;
+
+      const twitterCard = document.createElement('meta');
+      twitterCard.name = 'twitter:card';
+      twitterCard.content = 'summary';
+
+      const titleTag = document.createElement('meta');
+      titleTag.setAttribute('property', 'og:title');
+      titleTag.content = 'Dynamic Meta Tags Example';
+
+      const descriptionTag = document.createElement('meta');
+      descriptionTag.setAttribute('property', 'og:description');
+      descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+
+      const twitterTitleTag = document.createElement('meta');
+      twitterTitleTag.name = 'twitter:title';
+      twitterTitleTag.content = this.articleHead.title;
+
+      const twitterDescriptionTag = document.createElement('meta');
+      twitterDescriptionTag.name = 'twitter:description';
+      twitterDescriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+
+      document.head.appendChild(twitterCard);
+      document.head.appendChild(titleTag);
+      document.head.appendChild(descriptionTag);
+      document.head.appendChild(twitterTitleTag);
+      document.head.appendChild(twitterDescriptionTag);
     }
   }
 
