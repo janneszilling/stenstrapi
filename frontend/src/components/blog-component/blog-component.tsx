@@ -45,16 +45,26 @@ export class BlogComponent {
     twitterCard.content = 'summary';
 
     const titleTag = document.createElement('meta');
+    titleTag.setAttribute('property', 'og:title');
+    titleTag.content = 'Dynamic Meta Tags Example';
+
+    const descriptionTag = document.createElement('meta');
+    descriptionTag.setAttribute('property', 'og:description');
+    descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+
+    const twitterTitleTag = document.createElement('meta');
     titleTag.name = 'twitter:title';
     titleTag.content = this.articleHead.title;
 
-    const descriptionTag = document.createElement('meta');
+    const twitterDescriptionTag = document.createElement('meta');
     descriptionTag.name = 'twitter:description';
     descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
 
+    document.head.appendChild(twitterCard);
     document.head.appendChild(titleTag);
     document.head.appendChild(descriptionTag);
-    document.head.appendChild(twitterCard);
+    document.head.appendChild(twitterTitleTag);
+    document.head.appendChild(twitterDescriptionTag);
   }
 
   @Watch('htmlString')
