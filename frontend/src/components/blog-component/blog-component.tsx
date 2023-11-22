@@ -53,12 +53,12 @@ export class BlogComponent {
     descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
 
     const twitterTitleTag = document.createElement('meta');
-    titleTag.name = 'twitter:title';
-    titleTag.content = this.articleHead.title;
+    twitterTitleTag.name = 'twitter:title';
+    twitterTitleTag.content = this.articleHead.title;
 
     const twitterDescriptionTag = document.createElement('meta');
-    descriptionTag.name = 'twitter:description';
-    descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+    twitterDescriptionTag.name = 'twitter:description';
+    twitterDescriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
 
     document.head.appendChild(twitterCard);
     document.head.appendChild(titleTag);
