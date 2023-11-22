@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, State, Watch, Element } from '@stencil/core';
 import { dataSvc } from '../../services/data.service';
 //import { metaSvc } from '../../services/injectMeta.service';
 
@@ -7,6 +7,8 @@ import { dataSvc } from '../../services/data.service';
   styleUrl: 'blog-component.scss',
 })
 export class BlogComponent {
+  @Element() el: HTMLElement;
+
   @Prop() page?: string;
   @State() htmlString: string = '';
   @State() tableOfContents: Element[] = [];
@@ -24,15 +26,33 @@ export class BlogComponent {
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
 
-      const metaData = this.articleHead;
-      injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
-      document.title = `${metaData.title} | Stockrain`;
-      document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
+      // const metaData = this.articleHead;
+      // injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
+      // document.title = `${metaData.title} | Stockrain`;
+      // document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
     }
   }
 
   componentDidRender() {
     this.scrollToTop();
+  }
+
+  componentDidLoad() {
+    const twitterCard = document.createElement('meta');
+    twitterCard.name = 'twitter:card';
+    twitterCard.content = 'summary';
+
+    const titleTag = document.createElement('meta');
+    titleTag.name = 'twitter:title';
+    titleTag.content = this.articleHead.title;
+
+    const descriptionTag = document.createElement('meta');
+    descriptionTag.name = 'twitter:description';
+    descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+
+    document.head.appendChild(titleTag);
+    document.head.appendChild(descriptionTag);
+    document.head.appendChild(twitterCard);
   }
 
   @Watch('htmlString')
@@ -95,40 +115,40 @@ export class BlogComponent {
   }
 }
 
-const injectMetaTags = (title, description, splash, page) => {
-  createOgTag('og:title', `${title} | Stockrain`);
-  createOgTag('og:description', description);
-  createOgTag('og:url', `https://www.stockrain.de${page}`);
-  createOgTag('og:image', `${splash}`);
-  createTwitterTag('twitter:card', `summary`);
-  createTwitterTag('twitter:title', title);
-  createTwitterTag('twitter:description', description);
-  createTwitterTag('twitter:image', `${splash}`);
-  createTwitterTag('twitter:creator', `@stockraininvest`);
-};
+// const injectMetaTags = (title, description, splash, page) => {
+//   createOgTag('og:title', `${title} | Stockrain`);
+//   createOgTag('og:description', description);
+//   createOgTag('og:url', `https://www.stockrain.de${page}`);
+//   createOgTag('og:image', `${splash}`);
+//   createTwitterTag('twitter:card', `summary`);
+//   createTwitterTag('twitter:title', title);
+//   createTwitterTag('twitter:description', description);
+//   createTwitterTag('twitter:image', `${splash}`);
+//   createTwitterTag('twitter:creator', `@stockraininvest`);
+// };
 
-const createOgTag = (type: string, content: string) => {
-  let el = document.head.querySelector(`meta[property="${type}"]`);
-  if (!el) {
-    el = document.createElement('meta');
-    el.setAttribute('property', type);
-    el.setAttribute('content', content);
-    document.head.appendChild(el);
-  } else {
-    el.setAttribute('property', type);
-    el.setAttribute('content', content);
-  }
-};
+// const createOgTag = (type: string, content: string) => {
+//   let el = document.head.querySelector(`meta[property="${type}"]`);
+//   if (!el) {
+//     el = document.createElement('meta');
+//     el.setAttribute('property', type);
+//     el.setAttribute('content', content);
+//     document.head.appendChild(el);
+//   } else {
+//     el.setAttribute('property', type);
+//     el.setAttribute('content', content);
+//   }
+// };
 
-const createTwitterTag = (type: string, content: string) => {
-  let el = document.head.querySelector(`meta[name="${type}"]`);
-  if (!el) {
-    el = document.createElement('meta');
-    el.setAttribute('name', type);
-    el.setAttribute('content', content);
-    document.head.appendChild(el);
-  } else {
-    el.setAttribute('name', type);
-    el.setAttribute('content', content);
-  }
-};
+// const createTwitterTag = (type: string, content: string) => {
+//   let el = document.head.querySelector(`meta[name="${type}"]`);
+//   if (!el) {
+//     el = document.createElement('meta');
+//     el.setAttribute('name', type);
+//     el.setAttribute('content', content);
+//     document.head.appendChild(el);
+//   } else {
+//     el.setAttribute('name', type);
+//     el.setAttribute('content', content);
+//   }
+// };
