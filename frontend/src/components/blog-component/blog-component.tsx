@@ -5,6 +5,7 @@ import { dataSvc } from '../../services/data.service';
 @Component({
   tag: 'blog-component',
   styleUrl: 'blog-component.scss',
+  shadow: false,
 })
 export class BlogComponent {
   @Element() el: HTMLElement;
