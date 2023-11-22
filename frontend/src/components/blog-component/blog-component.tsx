@@ -38,7 +38,7 @@ export class BlogComponent {
 
       const titleTag = document.createElement('meta');
       titleTag.setAttribute('property', 'og:title');
-      titleTag.content = 'Dynamic Meta Tags Example';
+      titleTag.content = this.articleHead.title;
 
       const descriptionTag = document.createElement('meta');
       descriptionTag.setAttribute('property', 'og:description');
