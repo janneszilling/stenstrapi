@@ -36,6 +36,8 @@ export class BlogComponent {
       twitterCard.name = 'twitter:card';
       twitterCard.content = 'summary';
 
+      console.log(this.articleHead.title);
+
       const titleTag = document.createElement('meta');
       titleTag.setAttribute('property', 'og:title');
       titleTag.content = this.articleHead.title;
