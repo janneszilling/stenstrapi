@@ -11,14 +11,14 @@ export class AppHome {
   }
 
   async componentWillRender() {
-    // injectMetaTags(
-    //   'Der Wirtschafts Blog',
-    //   'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
-    //   'https://www.stockrain.de/assets/meta-img.png',
-    //   '/home',
-    // );
+    injectMetaTags(
+      'Der Wirtschafts Blog',
+      'Der Wirtschafts Blog von Stockrain. Hier findest du Artikel zu den Themen Wirtschaft, Finanzen, Politik und mehr.',
+      'https://www.stockrain.de/assets/meta-img.png',
+      '/home',
+    );
 
-    // document.title = 'Der Wirtschafts Blog | Stockrain';
+    document.title = 'Der Wirtschafts Blog | Stockrain';
 
     this.scrollToTop();
   }
@@ -63,40 +63,40 @@ export class AppHome {
   }
 }
 
-// const injectMetaTags = (title, description, splash, page) => {
-//   createOgTag('og:title', `${title} | Stockrain`);
-//   createOgTag('og:description', description);
-//   createOgTag('og:url', `https://www.stockrain.de${page}`);
-//   createOgTag('og:image', `${splash}`);
-//   createTwitterTag('twitter:card', `summary`);
-//   createTwitterTag('twitter:title', title);
-//   createTwitterTag('twitter:description', description);
-//   createTwitterTag('twitter:image', `${splash}`);
-//   createTwitterTag('twitter:creator', `@stockraininvest`);
-// };
+const injectMetaTags = (title, description, splash, page) => {
+  createOgTag('og:title', `${title} | Stockrain`);
+  createOgTag('og:description', description);
+  createOgTag('og:url', `https://www.stockrain.de${page}`);
+  createOgTag('og:image', `${splash}`);
+  createTwitterTag('twitter:card', `summary`);
+  createTwitterTag('twitter:title', title);
+  createTwitterTag('twitter:description', description);
+  createTwitterTag('twitter:image', `${splash}`);
+  createTwitterTag('twitter:creator', `@stockraininvest`);
+};
 
-// const createOgTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[property="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//   }
-// };
+const createOgTag = (type: string, content: string) => {
+  let el = document.head.querySelector(`meta[property="${type}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute('property', type);
+    el.setAttribute('content', content);
+    document.head.appendChild(el);
+  } else {
+    el.setAttribute('property', type);
+    el.setAttribute('content', content);
+  }
+};
 
-// const createTwitterTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[name="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//   }
-// };
+const createTwitterTag = (type: string, content: string) => {
+  let el = document.head.querySelector(`meta[name="${type}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute('name', type);
+    el.setAttribute('content', content);
+    document.head.appendChild(el);
+  } else {
+    el.setAttribute('name', type);
+    el.setAttribute('content', content);
+  }
+};

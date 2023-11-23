@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, State, Watch, Element } from '@stencil/core';
 import { dataSvc } from '../../services/data.service';
-//import { metaSvc } from '../../services/injectMeta.service';
+import { metaSvc } from '../../services/injectMeta.service';
 
 @Component({
   tag: 'blog-component',
@@ -27,42 +27,9 @@ export class BlogComponent {
       const htmlString = await queryResult.content;
       this.htmlString = htmlString;
 
-      // const metaData = this.articleHead;
-      // injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
-      // document.title = `${metaData.title} | Stockrain`;
-      // document.querySelector('meta[name="description"]').setAttribute('content', `${this.articleHead.description}}`);
-      document.title = `${this.articleHead.title} | Stockrain`;
-
-      const twitterCard = document.createElement('meta');
-      twitterCard.name = 'twitter:card';
-      twitterCard.content = 'summary';
-
-      const titleTag = document.createElement('meta');
-      titleTag.setAttribute('property', 'og:title');
-      titleTag.content = this.articleHead.title;
-
-      const descriptionTag = document.createElement('meta');
-      descriptionTag.setAttribute('property', 'og:description');
-      descriptionTag.content = this.articleHead.description;
-
-      const twitterTitleTag = document.createElement('meta');
-      twitterTitleTag.name = 'twitter:title';
-      twitterTitleTag.content = this.articleHead.title;
-
-      const twitterDescriptionTag = document.createElement('meta');
-      twitterDescriptionTag.name = 'twitter:description';
-      twitterDescriptionTag.content = this.articleHead.description;
-
-      const twitterImageTag = document.createElement('meta');
-      twitterImageTag.name = 'twitter:image';
-      twitterImageTag.content = this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '';
-
-      document.head.appendChild(twitterCard);
-      document.head.appendChild(titleTag);
-      document.head.appendChild(descriptionTag);
-      document.head.appendChild(twitterTitleTag);
-      document.head.appendChild(twitterDescriptionTag);
-      document.head.appendChild(twitterImageTag);
+      const metaData = this.articleHead;
+      metaSvc.injectMetaTags(metaData.title, metaData.description, metaData.splash.data !== null ? metaData.splash.data.attributes.url : '', this.page);
+      document.title = `${metaData.title} | Stockrain`;
     }
   }
 
