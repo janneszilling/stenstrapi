@@ -43,7 +43,7 @@ export class BlogComponent {
 
       const descriptionTag = document.createElement('meta');
       descriptionTag.setAttribute('property', 'og:description');
-      descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+      descriptionTag.content = this.articleHead.description;
 
       const twitterTitleTag = document.createElement('meta');
       twitterTitleTag.name = 'twitter:title';
@@ -51,7 +51,11 @@ export class BlogComponent {
 
       const twitterDescriptionTag = document.createElement('meta');
       twitterDescriptionTag.name = 'twitter:description';
-      twitterDescriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
+      twitterDescriptionTag.content = this.articleHead.description;
+
+      const twitterImageTag = document.createElement('meta');
+      twitterImageTag.name = 'twitter:image';
+      twitterImageTag.content = this.articleHead.splash.data !== null ? this.articleHead.splash.data.attributes.url : '';
 
       document.head.appendChild(twitterCard);
       document.head.appendChild(titleTag);
