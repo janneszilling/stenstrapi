@@ -62,6 +62,7 @@ export class BlogComponent {
       document.head.appendChild(descriptionTag);
       document.head.appendChild(twitterTitleTag);
       document.head.appendChild(twitterDescriptionTag);
+      document.head.appendChild(twitterImageTag);
     }
   }
 
