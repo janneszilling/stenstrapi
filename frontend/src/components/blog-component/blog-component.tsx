@@ -37,36 +37,6 @@ export class BlogComponent {
     this.scrollToTop();
   }
 
-  componentDidLoad() {
-    document.title = `${this.articleHead.title} | Stockrain`;
-
-    const twitterCard = document.createElement('meta');
-    twitterCard.name = 'twitter:card';
-    twitterCard.content = 'summary';
-
-    const titleTag = document.createElement('meta');
-    titleTag.setAttribute('property', 'og:title');
-    titleTag.content = 'Dynamic Meta Tags Example';
-
-    const descriptionTag = document.createElement('meta');
-    descriptionTag.setAttribute('property', 'og:description');
-    descriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
-
-    const twitterTitleTag = document.createElement('meta');
-    twitterTitleTag.name = 'twitter:title';
-    twitterTitleTag.content = this.articleHead.title;
-
-    const twitterDescriptionTag = document.createElement('meta');
-    twitterDescriptionTag.name = 'twitter:description';
-    twitterDescriptionTag.content = 'This is a dynamic meta tags example with Stencil.js';
-
-    document.head.appendChild(twitterCard);
-    document.head.appendChild(titleTag);
-    document.head.appendChild(descriptionTag);
-    document.head.appendChild(twitterTitleTag);
-    document.head.appendChild(twitterDescriptionTag);
-  }
-
   @Watch('htmlString')
   generateTableOfContents(htmlString: string) {
     const tempElement = document.createElement('div');
@@ -126,41 +96,3 @@ export class BlogComponent {
     );
   }
 }
-
-// const injectMetaTags = (title, description, splash, page) => {
-//   createOgTag('og:title', `${title} | Stockrain`);
-//   createOgTag('og:description', description);
-//   createOgTag('og:url', `https://www.stockrain.de${page}`);
-//   createOgTag('og:image', `${splash}`);
-//   createTwitterTag('twitter:card', `summary`);
-//   createTwitterTag('twitter:title', title);
-//   createTwitterTag('twitter:description', description);
-//   createTwitterTag('twitter:image', `${splash}`);
-//   createTwitterTag('twitter:creator', `@stockraininvest`);
-// };
-
-// const createOgTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[property="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('property', type);
-//     el.setAttribute('content', content);
-//   }
-// };
-
-// const createTwitterTag = (type: string, content: string) => {
-//   let el = document.head.querySelector(`meta[name="${type}"]`);
-//   if (!el) {
-//     el = document.createElement('meta');
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//     document.head.appendChild(el);
-//   } else {
-//     el.setAttribute('name', type);
-//     el.setAttribute('content', content);
-//   }
-// };
