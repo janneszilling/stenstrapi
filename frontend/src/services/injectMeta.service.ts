@@ -12,7 +12,7 @@ export class MetaService {
     this.createOgTag('og:url', `https://www.stockrain.de${page}`);
     this.createOgTag('og:image', `${splash}`);
 
-    this.createTwitterTag('twitter:card', `summary`);
+    this.createTwitterTag('twitter:card', `summary_large_image`);
     this.createTwitterTag('twitter:title', title);
     this.createTwitterTag('twitter:description', description);
     this.createTwitterTag('twitter:image', `${splash}`);
