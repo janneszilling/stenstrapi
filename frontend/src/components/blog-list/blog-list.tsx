@@ -54,7 +54,6 @@ export class BlogList {
                         <span id="reading-time">{post.attributes.estimatedReadingTimeInMinutes} min</span>
                       </div>
                     </div>
-                    <p class="link-button">Mehr lesen</p>
                   </div>
                 </div>
               </stencil-route-link>
