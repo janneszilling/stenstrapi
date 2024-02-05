@@ -52,7 +52,7 @@ export const GET_POST_BY_SLUG = `
 
 export const GET_THE_LATEST_POSTS = `
 {
-  blogposts(sort: "date:desc", pagination: {limit: 3}) {
+  blogposts(sort: "date:desc", pagination: {limit: 4}) {
     data {
       attributes {
         title

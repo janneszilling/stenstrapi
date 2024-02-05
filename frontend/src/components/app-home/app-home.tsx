@@ -29,14 +29,6 @@ export class AppHome {
         <div class="home-header">
           <p class="subheading">Der Wirtschafts Blog</p>
           <h1>Educate Economy</h1>
-          <div class="horizontal">
-            <stencil-route-link url="/blog">
-              <button class="primary-btn">Zum Blog</button>
-            </stencil-route-link>
-            {/* <stencil-route-link url="#newsletter">
-              <button class="secondary-btn">Newsletter</button>
-            </stencil-route-link> */}
-          </div>
         </div>
         <div class="lastest-posts">
           <latest-blog-list></latest-blog-list>
