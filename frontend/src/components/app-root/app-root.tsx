@@ -8,9 +8,7 @@ import { cookieSvc } from '../../services/cookie.service';
 })
 export class AppRoot {
   data?: any;
-  private nav?: HTMLDivElement;
   private menu?: HTMLDivElement;
-  private links?: HTMLDivElement;
 
   scrollToTop() {
     window.scrollTo(0, 0);
@@ -27,17 +25,13 @@ export class AppRoot {
     cookieSvc.setGoogleAnalyticsCookie();
   }
 
-  showMenu() {
-    if (this.menu.style.height === 'auto') {
-      this.nav.style.alignItems = 'center';
-      this.menu.style.height = '80px';
-      this.links.style.display = 'none';
-      return;
+  toggleMenu() {
+    if (window.innerWidth < 1200 && this.menu.style.display === 'flex') {
+      this.menu.style.display = 'none';
+      console.log('window.innerWidth1', window.innerWidth);
     } else {
-      this.nav.style.alignItems = 'flex-start';
-      this.menu.style.height = 'auto';
-      this.links.style.display = 'flex';
-      return;
+      this.menu.style.display = 'flex';
+      console.log('window.innerWidth2', window.innerWidth);
     }
   }
 
@@ -45,30 +39,35 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <div class="nav" ref={el => (this.nav = el as HTMLDivElement)}>
-            <stencil-route-link url="/">
-              <img src={getAssetPath('../../assets/st-logo-dark.svg')} alt="Stockrain" />
-            </stencil-route-link>
-
+          <div class="nav">
+            <div class="nav-wrapper">
+              <div class="logo">
+                <stencil-route-link url="/">
+                  <img src={getAssetPath('../../assets/st-logo-dark.svg')} alt="Stockrain" />
+                </stencil-route-link>
+              </div>
+              <div class="menu-btn" onClick={this.toggleMenu.bind(this)}>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div class="menu" ref={el => (this.menu = el as HTMLDivElement)}>
-              <div class="menu-btn" onClick={this.showMenu.bind(this)}>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="links" ref={el => (this.links = el as HTMLDivElement)} onClick={this.showMenu.bind(this)}>
-                <stencil-route-link url="/blog">Blog</stencil-route-link>
-                <span class="disabled">
-                  <stencil-route-link url="/#">
-                    Handbuch<span class="soon-lable">Soon</span>
-                  </stencil-route-link>
-                </span>
-                <span class="disabled">
-                  <stencil-route-link url="/#">
-                    Finanzrechner<span class="soon-lable">Soon</span>
-                  </stencil-route-link>
-                </span>
-                <stencil-route-link url="/about">Über uns</stencil-route-link>
-              </div>
+              <stencil-route-link url="/blog" onClick={this.toggleMenu.bind(this)}>
+                Blog
+              </stencil-route-link>
+              <span class="disabled">
+                <stencil-route-link url="/#" onClick={this.toggleMenu.bind(this)}>
+                  Handbuch<span class="soon-lable">Soon</span>
+                </stencil-route-link>
+              </span>
+              <span class="disabled">
+                <stencil-route-link url="/#" onClick={this.toggleMenu.bind(this)}>
+                  Finanzrechner<span class="soon-lable">Soon</span>
+                </stencil-route-link>
+              </span>
+              <stencil-route-link url="/about" onClick={this.toggleMenu.bind(this)}>
+                Über uns
+              </stencil-route-link>
             </div>
           </div>
         </header>
