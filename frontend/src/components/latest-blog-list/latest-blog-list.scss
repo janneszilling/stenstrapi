@@ -69,6 +69,7 @@
       h3 {
         font-size: var(--font-size-5);
         margin: 0 0 20px 0;
+        flex-grow: 1;
         hyphens: auto;
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
@@ -79,7 +80,6 @@
         margin: 0 0 20px 0;
         text-overflow: ellipsis;
         overflow: hidden;
-        flex-grow: 1;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;

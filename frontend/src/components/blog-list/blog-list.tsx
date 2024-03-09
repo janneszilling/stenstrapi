@@ -24,6 +24,10 @@ export class BlogList {
   render() {
     return (
       <Host>
+        <div class="blog-header">
+          <p class="subheading">Spannende</p>
+          <h1>Artikel</h1>
+        </div>
         <div class="blog-list-wrapper">
           {this.data === null ? (
             <h1>Keine Beiträge vorhanden</h1>
@@ -35,7 +39,6 @@ export class BlogList {
                     <img src={post.attributes.splash.data !== null ? post.attributes.splash.data.attributes.url : getAssetPath('../../assets/placeholder-a.png')} />
                   </div>
                   <div class="content-wrapper">
-                    <h3>{post.attributes.title}</h3>
                     <div class="categories">
                       {post.attributes.tags.data.map((tag, i) => (
                         <span key={i} id="category">
@@ -43,15 +46,12 @@ export class BlogList {
                         </span>
                       ))}
                     </div>
+                    <h3>{post.attributes.title}</h3>
 
                     <p>{post.attributes.description}</p>
                     <div class="facts-wrapper">
                       <div class="article-facts">
-                        <span id="name">{post.attributes.author}</span>
-                        <span class="facts-divider">|</span>
                         <span id="date">{String(post.attributes.date).split('-').reverse().join('.')}</span>
-                        <span class="facts-divider">|</span>
-                        <span id="reading-time">{post.attributes.estimatedReadingTimeInMinutes} min</span>
                       </div>
                     </div>
                   </div>

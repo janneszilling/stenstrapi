@@ -55,7 +55,7 @@ export class AppRoot {
                 <span></span>
                 <span></span>
               </div>
-              <div class="links" ref={el => (this.links = el as HTMLDivElement)}>
+              <div class="links" ref={el => (this.links = el as HTMLDivElement)} onClick={this.showMenu.bind(this)}>
                 <stencil-route-link url="/blog">Blog</stencil-route-link>
                 <span class="disabled">
                   <stencil-route-link url="/#">
