@@ -20,8 +20,8 @@ export class AppAboutUs {
     return (
       <div class="about-wrapper">
         <div class="home-header">
-          <p class="subheading">Wer steckt hinter Stockrain</p>
-          <h1>Über uns</h1>
+          <p class="subheading">Wer steckt hinter stockrain</p>
+          <h1>Unser Team</h1>
         </div>
         <div class="about-text-wrapper">
           <div class="about-text">
