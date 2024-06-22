@@ -46,6 +46,7 @@
 
 .blog-list-wrapper {
   max-width: 1660px;
+  width: calc(100% - 60px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
