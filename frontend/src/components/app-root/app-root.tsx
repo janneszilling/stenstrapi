@@ -60,8 +60,8 @@ export class AppRoot {
                   Handbuch<span class="soon-lable">Soon</span>
                 </stencil-route-link>
               </span>
-              <span class="disabled">
-                <stencil-route-link url="/#" onClick={this.toggleMenu.bind(this)}>
+              <span>
+                <stencil-route-link url="/finanzrechner" onClick={this.toggleMenu.bind(this)}>
                   Finanzrechner<span class="soon-lable">Soon</span>
                 </stencil-route-link>
               </span>
@@ -77,6 +77,7 @@ export class AppRoot {
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/about" component="app-about-us" />
+              <stencil-route url="/finanzrechner" component="app-finance-site" />
               <stencil-route url="/impressum" component="app-imprint" />
               <stencil-route url="/datenschutz" component="app-privacy" />
               <stencil-route url="/blog" component="blog-list" />

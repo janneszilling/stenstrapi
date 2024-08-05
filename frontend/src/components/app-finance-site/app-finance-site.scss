@@ -1,0 +1,132 @@
+:host {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.subheading {
+  font-size: var(--font-size-7);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 0 30px 0;
+}
+
+h1 {
+  font-size: var(--font-size-1);
+  font-family: 'Gloock', serif;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.finance-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 473px;
+  margin: 80px 12px 0 12px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom right, #0e61c4, #3591ff);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    height: 170px;
+
+    .subheading {
+      font-size: 10px;
+      margin: 0 0 12px 0;
+    }
+  }
+}
+
+.grid-wrapper {
+  max-width: 1660px;
+  width: calc(100% - 60px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 100px auto;
+
+  stencil-route-link {
+    * {
+      text-decoration: none;
+    }
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 450px;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s ease;
+
+    h1 {
+      font-size: var(--font-size-2);
+      font-family: 'Gloock', serif;
+      font-weight: 400;
+      color: white;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: calc(100% - 24px);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+
+    margin-top: 24px;
+
+    .grid-item {
+      height: 250px;
+      padding: 40px;
+
+      h1 {
+        font-size: 54px;
+      }
+
+      .subheading {
+        font-size: 10px;
+      }
+
+      @media (hover: none) {
+        &:hover {
+          transform: inherit;
+        }
+      }
+    }
+  }
+}
+
+#zinsen {
+  background-image: url('/assets/zinsen-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#kredite {
+  background-image: url('/assets/kredite-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#anlagen {
+  background-image: url('/assets/anlagen-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

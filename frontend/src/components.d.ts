@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppAboutUs {
     }
+    interface AppFinanceSite {
+    }
     interface AppHome {
     }
     interface AppImprint {
@@ -33,6 +35,12 @@ declare global {
     var HTMLAppAboutUsElement: {
         prototype: HTMLAppAboutUsElement;
         new (): HTMLAppAboutUsElement;
+    };
+    interface HTMLAppFinanceSiteElement extends Components.AppFinanceSite, HTMLStencilElement {
+    }
+    var HTMLAppFinanceSiteElement: {
+        prototype: HTMLAppFinanceSiteElement;
+        new (): HTMLAppFinanceSiteElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -84,6 +92,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-about-us": HTMLAppAboutUsElement;
+        "app-finance-site": HTMLAppFinanceSiteElement;
         "app-home": HTMLAppHomeElement;
         "app-imprint": HTMLAppImprintElement;
         "app-privacy": HTMLAppPrivacyElement;
@@ -96,6 +105,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppAboutUs {
+    }
+    interface AppFinanceSite {
     }
     interface AppHome {
     }
@@ -117,6 +128,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-about-us": AppAboutUs;
+        "app-finance-site": AppFinanceSite;
         "app-home": AppHome;
         "app-imprint": AppImprint;
         "app-privacy": AppPrivacy;
@@ -132,6 +144,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-about-us": LocalJSX.AppAboutUs & JSXBase.HTMLAttributes<HTMLAppAboutUsElement>;
+            "app-finance-site": LocalJSX.AppFinanceSite & JSXBase.HTMLAttributes<HTMLAppFinanceSiteElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-imprint": LocalJSX.AppImprint & JSXBase.HTMLAttributes<HTMLAppImprintElement>;
             "app-privacy": LocalJSX.AppPrivacy & JSXBase.HTMLAttributes<HTMLAppPrivacyElement>;
