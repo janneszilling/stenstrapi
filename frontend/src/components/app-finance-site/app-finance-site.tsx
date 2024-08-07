@@ -7,7 +7,7 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class AppFinanceSite {
   scrollToTop() {
-    window.scrollTo(0, 1);
+    window.scrollTo(0, 0);
   }
 
   componentDidRender() {
