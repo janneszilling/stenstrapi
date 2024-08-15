@@ -18,6 +18,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface AppZinsen {
+    }
     interface BlogComponent {
         "page"?: string;
     }
@@ -66,6 +68,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLAppZinsenElement extends Components.AppZinsen, HTMLStencilElement {
+    }
+    var HTMLAppZinsenElement: {
+        prototype: HTMLAppZinsenElement;
+        new (): HTMLAppZinsenElement;
+    };
     interface HTMLBlogComponentElement extends Components.BlogComponent, HTMLStencilElement {
     }
     var HTMLBlogComponentElement: {
@@ -97,6 +105,7 @@ declare global {
         "app-imprint": HTMLAppImprintElement;
         "app-privacy": HTMLAppPrivacyElement;
         "app-root": HTMLAppRootElement;
+        "app-zinsen": HTMLAppZinsenElement;
         "blog-component": HTMLBlogComponentElement;
         "blog-list": HTMLBlogListElement;
         "c-banner": HTMLCBannerElement;
@@ -116,6 +125,8 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface AppZinsen {
+    }
     interface BlogComponent {
         "page"?: string;
     }
@@ -133,6 +144,7 @@ declare namespace LocalJSX {
         "app-imprint": AppImprint;
         "app-privacy": AppPrivacy;
         "app-root": AppRoot;
+        "app-zinsen": AppZinsen;
         "blog-component": BlogComponent;
         "blog-list": BlogList;
         "c-banner": CBanner;
@@ -149,6 +161,7 @@ declare module "@stencil/core" {
             "app-imprint": LocalJSX.AppImprint & JSXBase.HTMLAttributes<HTMLAppImprintElement>;
             "app-privacy": LocalJSX.AppPrivacy & JSXBase.HTMLAttributes<HTMLAppPrivacyElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-zinsen": LocalJSX.AppZinsen & JSXBase.HTMLAttributes<HTMLAppZinsenElement>;
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
             "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
             "c-banner": LocalJSX.CBanner & JSXBase.HTMLAttributes<HTMLCBannerElement>;

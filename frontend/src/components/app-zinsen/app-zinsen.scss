@@ -1,0 +1,231 @@
+.subheading {
+  font-size: var(--font-size-7);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
+  margin: 0 0 30px 0;
+}
+
+h1 {
+  font-size: var(--font-size-1);
+  font-family: 'Gloock', serif;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.finance-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 473px;
+  margin: 80px 12px 0 12px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom right, #0e61c4, #3591ff);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.zinsen-wrapper {
+  // Container für den gesamten Zinsrechner-Bereich
+  display: flex; // Setzt das Layout des Containers auf Flexbox
+  flex-direction: column; // Richtet die Flex-Items (Kinder) vertikal aus
+  align-items: center; // Zentriert die Flex-Items horizontal
+  padding: 20px; // Innenabstand um den gesamten Container
+  padding-top: 80px; // Zusätzlicher Innenabstand oben
+  margin-bottom: 100px; // Großer Abstand nach unten für die gesamte Seite
+}
+
+.zinsen-rechner {
+  // Container für den Zinsrechner
+  width: 100%; // Nimmt die volle Breite ein
+  max-width: 800px; // Maximalbreite des Rechners, damit er nicht zu groß wird
+  border-radius: 12px; // Abgerundete Ecken des Rechners
+  padding: 20px; // Innenabstand innerhalb des Rechners
+
+  .card-wallet {
+    // Container für alle Karten (Kategorien)
+    display: flex; // Flexbox für die Anordnung der Karten
+    flex-direction: column; // Richtet die Karten vertikal aus
+
+    .card {
+      // Grundstil für jede Karte (Kategorie)
+      background-color: #ffffff; // Weißer Hintergrund der Karte
+      border-radius: 8px; // Abgerundete Ecken der Karten
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Schatten für die Karte, um sie hervorzuheben
+      padding: 20px; // Innenabstand innerhalb der Karten
+      cursor: pointer; // Zeigt bei Hover einen Zeiger an, um die Interaktivität zu betonen
+      transition: all 0.4s ease; // Übergangsanimation bei Veränderungen (z. B. bei Hover)
+      overflow: hidden; // Verhindert, dass Inhalt die Grenzen der Karte überschreitet
+      height: 80px; // Höhe der Karte, wenn sie eingeklappt ist
+      margin-top: -15px; // Negativer Abstand, um Karten optisch zu überlappen
+      display: flex; // Flexbox für den Inhalt der Karten
+      flex-direction: column; // Vertikale Ausrichtung des Inhalts
+      justify-content: start; // Zentriert den Inhalt der Karte vertikal
+
+      &:first-child {
+        // Spezielle Regel für die erste Karte
+        margin-top: 0; // Entfernt die Überlappung für die erste Karte
+      }
+
+      &:hover {
+        // Stil für die Karte beim Hover-Zustand
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); // Größerer Schatten, um die Karte optisch anzuheben
+      }
+
+      h2 {
+        // Stil für die Überschrift in der Karte
+        font-size: 1.0rem; // Große Schriftgröße für die Titel der Karten
+        margin-bottom: 15px; // Abstand unterhalb der Überschrift
+        color: #555; // Leicht gedämpfte Textfarbe
+      }
+
+      .input-group {
+        // Container für Eingabefelder und Labels
+        margin-bottom: 20px; // Abstand zwischen den Eingabegruppen
+
+        label {
+          // Stil für die Zwischenüberschriften (Labels)
+          display: block; // Blockanzeige, damit das Label über dem Eingabefeld steht
+          font-size: 0.8rem; // Schriftgröße der Zwischenüberschriften
+          color: #fff; // Weiße Textfarbe für die Zwischenüberschriften
+          margin-bottom: 8px; // Abstand zwischen Label und Eingabefeld
+        }
+
+        .input-wrapper {
+          // Wrapper für das Euro-Symbol und das Eingabefeld
+          display: flex; // Flexbox für horizontale Anordnung von Symbol und Input
+          align-items: center; // Vertikale Ausrichtung der Inhalte innerhalb des Wrappers
+
+          .euro-symbol {
+            // Stil für das Euro-Symbol
+            font-size: 3rem; // Große Schriftgröße für das Euro-Symbol
+            margin-right: 10px; // Abstand zwischen dem Symbol und dem Eingabefeld
+            color: #fff; // Weiße Farbe für das Euro-Symbol
+          }
+
+          input {
+            // Stil für die Eingabefelder
+            flex: 1; // Das Eingabefeld füllt den verfügbaren Platz aus
+            padding: 12px; // Innenabstand innerhalb des Eingabefelds
+            border: 1px solid #ddd; // Heller Rand um das Eingabefeld
+            border-radius: 6px; // Abgerundete Ecken für das Eingabefeld
+            font-size: 1.5rem; // Größere Schriftgröße für den Text im Eingabefeld
+            color: #333; // Dunklere Textfarbe für die Eingabe
+            background-color: #fafafa; // Sehr hellgrauer Hintergrund für das Eingabefeld
+            box-sizing: border-box; // Stellt sicher, dass Padding und Rahmen im Element enthalten sind
+          }
+        }
+      }
+
+      &.active {
+        // Stil für geöffnete Karten (aktive Karten)
+        justify-content: start; // Inhalt der Karte oben ausrichten, wenn sie geöffnet ist
+        height: 300px; // Erhöhte Höhe für die Karte, wenn sie geöffnet ist
+
+        input {
+          opacity: 1; // Volle Sichtbarkeit der Eingabefelder in der geöffneten Karte
+          pointer-events: auto; // Eingabefelder sind interaktiv
+          border-color: #fff; // Weißer Rand um die Eingabefelder
+        }
+
+        h2, input {
+          color: #fff !important; // Weiße Textfarbe für Überschriften und Eingaben
+        }
+      }
+
+      /* Farbeinstellungen für verschiedene Karten, wenn sie aktiv sind */
+      &:nth-child(1).active {
+        background-color: #007bff; // Blau für die erste Karte
+      }
+      &:nth-child(2).active {
+        background-color: #3399ff; // Hellblau für die zweite Karte
+      }
+      &:nth-child(3).active {
+        background-color: #0056cc; // Dunkelblau für die dritte Karte
+      }
+      &:nth-child(4).active {
+        background-color: #003f99; // Dunkleres Blau für die vierte Karte
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // Stile für kleinere Bildschirme (Responsive Design)
+  .zinsen-wrapper {
+    padding: 10px; // Weniger Padding auf kleinen Bildschirmen
+    padding-top: 60px; // Weniger Abstand oben
+    margin-bottom: 30px; // Kleinere Margin unten auf mobilen Geräten
+  }
+
+  .zinsen-rechner {
+    padding: 15px; // Weniger Padding innerhalb des Rechners auf kleinen Bildschirmen
+
+    .card-wallet {
+      gap: 15px; // Abstand zwischen den Karten auf kleinen Bildschirmen
+
+      .card {
+        padding: 15px; // Weniger Padding in den Karten auf mobilen Geräten
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  // Desktop-Stile
+  .zinsen-wrapper {
+    padding-top: 40px; // Weniger Abstand oben auf größeren Bildschirmen
+  }
+
+  .zinsen-rechner {
+    max-width: 1000px; // Größere maximale Breite auf Desktop
+    padding: 30px; // Mehr Innenabstand
+
+    .card-wallet {
+      display: grid; // Umstellung auf Grid-Layout für Desktop
+      grid-template-columns: 1fr 1fr 1fr; // Layout mit drei Spalten (eine für die linke Karte und zwei für die rechten Karten)
+      grid-template-rows: auto auto; // Automatische Höhe für die Zeilen
+      grid-template-areas: 
+        "card1 card2 card2"
+        "card3 card4 card4"; // Spezifiziert die Platzierung der Karten im Grid
+
+      gap: 20px; // Abstand zwischen den Karten
+
+      .card {
+        margin-top: 0; // Entfernt die negative Marge auf dem Desktop
+        height: 300px; // Karten sind immer ausgeklappt
+        cursor: default; // Kein Hover-Effekt, keine Klickbarkeit
+        pointer-events: none; // Entfernt jegliche Interaktivität der Karten auf Desktop
+        justify-content: start; // Inhalt der Karte oben ausrichten
+
+        &:hover {
+          box-shadow: none; // Keine Schattenveränderung beim Hover auf Desktop
+        }
+
+        &.active {
+          justify-content: start; // Inhalt der aktiven Karten oben ausrichten
+        }
+      }
+
+      .card:nth-child(1) {
+        grid-area: card1; // Positionierung der ersten Karte im Grid
+      }
+
+      .card:nth-child(2) {
+        grid-area: card2; // Positionierung der zweiten Karte im Grid (groß)
+      }
+
+      .card:nth-child(3) {
+        grid-area: card3; // Positionierung der dritten Karte im Grid
+      }
+
+      .card:nth-child(4) {
+        grid-area: card4; // Positionierung der vierten Karte im Grid (groß)
+      }
+    }
+  }
+}

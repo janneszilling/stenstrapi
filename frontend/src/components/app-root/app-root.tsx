@@ -77,6 +77,7 @@ export class AppRoot {
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/about" component="app-about-us" />
+              <stencil-route url="/finanzrechner/zinsen" component="app-zinsen" />
               <stencil-route url="/finanzrechner" component="app-finance-site" />
               <stencil-route url="/impressum" component="app-imprint" />
               <stencil-route url="/datenschutz" component="app-privacy" />
