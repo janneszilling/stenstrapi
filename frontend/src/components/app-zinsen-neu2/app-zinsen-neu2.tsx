@@ -34,7 +34,7 @@ export class AppZinsenNeu2 {
                 <input type="text" id="sparrate" value="1.000,00" />
               </div>
             </div>
-            <calc-card-input label="Hallo"></calc-card-input>
+            <calc-card-input label="Bla"></calc-card-input>
           </div>
         </calc-card>
       </Host>
