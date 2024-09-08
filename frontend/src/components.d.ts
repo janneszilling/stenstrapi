@@ -20,6 +20,10 @@ export namespace Components {
     }
     interface AppZinsen {
     }
+    interface AppZinsenNeu {
+    }
+    interface AppZinsenNeu2 {
+    }
     interface BlogComponent {
         "page"?: string;
     }
@@ -27,6 +31,13 @@ export namespace Components {
     }
     interface CBanner {
         "hidden": boolean;
+    }
+    interface CalcCard {
+    }
+    interface CalcCardInput {
+        "label": string;
+    }
+    interface IconButton {
     }
     interface LatestBlogList {
     }
@@ -74,6 +85,18 @@ declare global {
         prototype: HTMLAppZinsenElement;
         new (): HTMLAppZinsenElement;
     };
+    interface HTMLAppZinsenNeuElement extends Components.AppZinsenNeu, HTMLStencilElement {
+    }
+    var HTMLAppZinsenNeuElement: {
+        prototype: HTMLAppZinsenNeuElement;
+        new (): HTMLAppZinsenNeuElement;
+    };
+    interface HTMLAppZinsenNeu2Element extends Components.AppZinsenNeu2, HTMLStencilElement {
+    }
+    var HTMLAppZinsenNeu2Element: {
+        prototype: HTMLAppZinsenNeu2Element;
+        new (): HTMLAppZinsenNeu2Element;
+    };
     interface HTMLBlogComponentElement extends Components.BlogComponent, HTMLStencilElement {
     }
     var HTMLBlogComponentElement: {
@@ -92,6 +115,24 @@ declare global {
         prototype: HTMLCBannerElement;
         new (): HTMLCBannerElement;
     };
+    interface HTMLCalcCardElement extends Components.CalcCard, HTMLStencilElement {
+    }
+    var HTMLCalcCardElement: {
+        prototype: HTMLCalcCardElement;
+        new (): HTMLCalcCardElement;
+    };
+    interface HTMLCalcCardInputElement extends Components.CalcCardInput, HTMLStencilElement {
+    }
+    var HTMLCalcCardInputElement: {
+        prototype: HTMLCalcCardInputElement;
+        new (): HTMLCalcCardInputElement;
+    };
+    interface HTMLIconButtonElement extends Components.IconButton, HTMLStencilElement {
+    }
+    var HTMLIconButtonElement: {
+        prototype: HTMLIconButtonElement;
+        new (): HTMLIconButtonElement;
+    };
     interface HTMLLatestBlogListElement extends Components.LatestBlogList, HTMLStencilElement {
     }
     var HTMLLatestBlogListElement: {
@@ -106,9 +147,14 @@ declare global {
         "app-privacy": HTMLAppPrivacyElement;
         "app-root": HTMLAppRootElement;
         "app-zinsen": HTMLAppZinsenElement;
+        "app-zinsen-neu": HTMLAppZinsenNeuElement;
+        "app-zinsen-neu2": HTMLAppZinsenNeu2Element;
         "blog-component": HTMLBlogComponentElement;
         "blog-list": HTMLBlogListElement;
         "c-banner": HTMLCBannerElement;
+        "calc-card": HTMLCalcCardElement;
+        "calc-card-input": HTMLCalcCardInputElement;
+        "icon-button": HTMLIconButtonElement;
         "latest-blog-list": HTMLLatestBlogListElement;
     }
 }
@@ -127,6 +173,10 @@ declare namespace LocalJSX {
     }
     interface AppZinsen {
     }
+    interface AppZinsenNeu {
+    }
+    interface AppZinsenNeu2 {
+    }
     interface BlogComponent {
         "page"?: string;
     }
@@ -134,6 +184,13 @@ declare namespace LocalJSX {
     }
     interface CBanner {
         "hidden"?: boolean;
+    }
+    interface CalcCard {
+    }
+    interface CalcCardInput {
+        "label"?: string;
+    }
+    interface IconButton {
     }
     interface LatestBlogList {
     }
@@ -145,9 +202,14 @@ declare namespace LocalJSX {
         "app-privacy": AppPrivacy;
         "app-root": AppRoot;
         "app-zinsen": AppZinsen;
+        "app-zinsen-neu": AppZinsenNeu;
+        "app-zinsen-neu2": AppZinsenNeu2;
         "blog-component": BlogComponent;
         "blog-list": BlogList;
         "c-banner": CBanner;
+        "calc-card": CalcCard;
+        "calc-card-input": CalcCardInput;
+        "icon-button": IconButton;
         "latest-blog-list": LatestBlogList;
     }
 }
@@ -162,9 +224,14 @@ declare module "@stencil/core" {
             "app-privacy": LocalJSX.AppPrivacy & JSXBase.HTMLAttributes<HTMLAppPrivacyElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "app-zinsen": LocalJSX.AppZinsen & JSXBase.HTMLAttributes<HTMLAppZinsenElement>;
+            "app-zinsen-neu": LocalJSX.AppZinsenNeu & JSXBase.HTMLAttributes<HTMLAppZinsenNeuElement>;
+            "app-zinsen-neu2": LocalJSX.AppZinsenNeu2 & JSXBase.HTMLAttributes<HTMLAppZinsenNeu2Element>;
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
             "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
             "c-banner": LocalJSX.CBanner & JSXBase.HTMLAttributes<HTMLCBannerElement>;
+            "calc-card": LocalJSX.CalcCard & JSXBase.HTMLAttributes<HTMLCalcCardElement>;
+            "calc-card-input": LocalJSX.CalcCardInput & JSXBase.HTMLAttributes<HTMLCalcCardInputElement>;
+            "icon-button": LocalJSX.IconButton & JSXBase.HTMLAttributes<HTMLIconButtonElement>;
             "latest-blog-list": LocalJSX.LatestBlogList & JSXBase.HTMLAttributes<HTMLLatestBlogListElement>;
         }
     }

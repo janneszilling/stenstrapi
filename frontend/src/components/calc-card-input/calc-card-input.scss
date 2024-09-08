@@ -1,0 +1,39 @@
+:host {
+  display: block;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+
+  .waehrung {
+    width: 2ch;
+  }
+
+  .input-wrapper {
+    display: flex;
+  }
+}
+
+.input-group label {
+  display: block;
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 54px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #555;
+}
