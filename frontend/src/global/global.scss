@@ -8,38 +8,43 @@
   Any global CSS variables should also be applied here.
 */
 @font-face {
-  font-family: 'Inter-Regular', sans-serif;
-  src: url(../assets/fonts/Inter-Regular.ttf);
+  font-family: 'InterR';
+  src: url('../assets/fonts/Inter-Regular.ttf') format('truetype');
   font-weight: 400;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter-Medium', sans-serif;
-  src: url(../assets/fonts/Inter-Medium.ttf);
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter-SemiBold', sans-serif;
-  src: url(../assets/fonts/Inter-SemiBold.ttf);
+  font-family: 'InterSB';
+  src: url('../assets/fonts/Inter-SemiBold.ttf') format('truetype');
   font-weight: 600;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter-Bold', sans-serif;
-  src: url(../assets/fonts/Inter-Bold.ttf);
+  font-family: 'InterB';
+  src: url('../assets/fonts/Inter-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gloock-Regular', serif;
-  src: url(../assets/fonts/Gloock-Regular.ttf);
+  font-family: 'MFBOldstyleB';
+  src: url('../assets/fonts/MFBOldstyle-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'MFBOldstyleR';
+  src: url('../assets/fonts/MFBOldstyle-Regular.otf') format('opentype');
   font-weight: 400;
-  font-style: normal;
+}
+
+:root {
+  --text: #151929;
+  --dark: #8e92a1;
+  --light: #e8e9ec;
+  --primary: #3591ff;
+  --error: #ff4d4f;
+  --success: #52c41a;
+  --warning: #faad14;
 }
 
 * {

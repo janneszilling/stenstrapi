@@ -25,13 +25,14 @@ export class AppPrivacy {
   render() {
     return (
       <div class="app-privacy">
-        <div class="home-header"></div>
+        <header-comp>
+          <h1>Datenschutzerklärung</h1>
+        </header-comp>
         <div class="privacy-wrapper">
-          <div class="privacy-content">
-            <h1>Datenschutzerkl&auml;rung</h1>
-            <h1 class="small">Ausführliche Informationen zum Datenschutz</h1>
+          <text-content-comp>
+            <h2 class="small">Ausführliche Informationen zum Datenschutz</h2>
 
-            <h2>1) Einleitung und Kontaktdaten des Verantwortlichen</h2>
+            <h3>1) Einleitung und Kontaktdaten des Verantwortlichen</h3>
 
             <p>
               <b>1.1</b>&nbsp;Wir freuen uns, dass Sie unsere Website besuchen und bedanken uns f&uuml;r Ihr Interesse. Im Folgenden informieren wir Sie &uuml;ber den Umgang mit
@@ -45,7 +46,7 @@ export class AppPrivacy {
               oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
             </p>
 
-            <h2>2) Datenerfassung beim Besuch unserer Website</h2>
+            <h3>2) Datenerfassung beim Besuch unserer Website</h3>
 
             <p>
               <b>2.1</b>&nbsp;Bei der blo&szlig; informatorischen Nutzung unserer Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen
@@ -75,7 +76,7 @@ export class AppPrivacy {
               &bdquo;https://&#8220; und dem Schloss-Symbol in Ihrer Browserzeile erkennen.
             </p>
 
-            <h2>3) Hosting &amp; Content-Delivery-Network</h2>
+            <h3>3) Hosting &amp; Content-Delivery-Network</h3>
 
             <p>
               <b>3.1</b>&nbsp;Vercel
@@ -116,7 +117,7 @@ export class AppPrivacy {
               europ&auml;ischen Datenschutzniveaus sicherstellen sollen.
             </p>
 
-            <h2 id="cookies">4) Cookies</h2>
+            <h3>4) Cookies</h3>
 
             <p>
               Um den Besuch unserer Website attraktiv zu gestalten und die Nutzung bestimmter Funktionen zu erm&ouml;glichen, verwenden wir Cookies, also kleine Textdateien, die
@@ -140,7 +141,7 @@ export class AppPrivacy {
 
             <p>Bitte beachten Sie, dass bei Nichtannahme von Cookies die Funktionalit&auml;t unserer Website eingeschr&auml;nkt sein kann.</p>
 
-            <h2>5) Kontaktaufnahme</h2>
+            <h3>5) Kontaktaufnahme</h3>
 
             <p>
               Im Rahmen der Kontaktaufnahme mit uns (z.B. per Kontaktformular oder E-Mail) werden personenbezogene Daten erhoben. Welche Daten im Falle der Nutzung eines
@@ -155,7 +156,7 @@ export class AppPrivacy {
               der betroffene Sachverhalt abschlie&szlig;end gekl&auml;rt ist und sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
             </p>
 
-            <h2>6) Webanalysedienste</h2>
+            <h3>6) Webanalysedienste</h3>
 
             <p>
               <b>6.1</b>&nbsp;Google Analytics 4
@@ -282,7 +283,7 @@ export class AppPrivacy {
               Angemessenheitsbeschlusses der Europ&auml;ischen Kommission die Einhaltung des europ&auml;ischen Datenschutzniveaus&nbsp;sicherstellt.
             </p>
 
-            <h2>7) Retargeting/ Remarketing und Conversion-Tracking</h2>
+            <h3>7) Retargeting/ Remarketing und Conversion-Tracking</h3>
 
             <p>- Google Ads Conversion-Tracking</p>
 
@@ -443,7 +444,7 @@ export class AppPrivacy {
               Angemessenheitsbeschlusses der Europ&auml;ischen Kommission die Einhaltung des europ&auml;ischen Datenschutzniveaus&nbsp;sicherstellt.
             </p>
 
-            <h2>8) Seitenfunktionalit&auml;ten</h2>
+            <h3>8) Seitenfunktionalit&auml;ten</h3>
 
             <p>Youtube</p>
 
@@ -479,7 +480,7 @@ export class AppPrivacy {
               Angemessenheitsbeschlusses der Europ&auml;ischen Kommission die Einhaltung des europ&auml;ischen Datenschutzniveaus&nbsp;sicherstellt.
             </p>
 
-            <h2>9) Rechte des Betroffenen</h2>
+            <h3>9) Rechte des Betroffenen</h3>
 
             <p>
               <b>9.1</b>&nbsp;Das geltende Datenschutzrecht gew&auml;hrt Ihnen gegen&uuml;ber dem Verantwortlichen hinsichtlich der Verarbeitung Ihrer personenbezogenen Daten die
@@ -521,7 +522,7 @@ export class AppPrivacy {
 
             <p>MACHEN SIE VON IHREM WIDERSPRUCHSRECHT GEBRAUCH, BEENDEN WIR DIE VERARBEITUNG DER BETROFFENEN DATEN ZU DIREKTWERBEZWECKEN.</p>
 
-            <h2>10) Dauer der Speicherung personenbezogener Daten</h2>
+            <h3>10) Dauer der Speicherung personenbezogener Daten</h3>
 
             <p>
               Die Dauer der Speicherung von personenbezogenen Daten bemisst sich anhand der jeweiligen Rechtsgrundlage, am Verarbeitungszweck und &ndash; sofern einschl&auml;gig
@@ -555,7 +556,7 @@ export class AppPrivacy {
               personenbezogene Daten im &Uuml;brigen dann gel&ouml;scht, wenn sie f&uuml;r die Zwecke, f&uuml;r die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht
               mehr notwendig sind.
             </p>
-          </div>
+          </text-content-comp>
         </div>
       </div>
     );

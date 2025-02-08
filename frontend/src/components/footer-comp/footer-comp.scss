@@ -1,0 +1,31 @@
+:host {
+  display: block;
+
+  max-width: calc(1400px - 12px);
+  width: calc(100% - 12px);
+  margin: 0 auto;
+  padding: 24px 12px;
+  height: max-content;
+  background-color: var(--text);
+}
+
+::slotted([slot='start']) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+::slotted([slot='center']) {
+  display: flex;
+  flex-direction: row;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'InterR';
+  font-size: 0.75rem;
+  color: var(--dark);
+  margin-top: 1rem;
+}

@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  height: 60vh;
+  width: 100%;
+  top: 100px;
+  position: relative;
+}
+
+navbar-menu-item-comp stencil-route-link {
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text);
+    font-family: 'InterSB';
+    font-size: 1.5rem;
+  }
+}
+
+.other stencil-route-link {
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #474a57;
+    font-family: 'InterSB';
+    font-size: 0.875rem;
+    margin: 6px 0 0 0;
+    padding: 6px 0;
+  }
+}
+
+footer-comp {
+  #link-stack-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+
+    stencil-route-link a {
+      color: var(--light);
+      text-decoration: none;
+      line-height: 1.6;
+
+      &:hover {
+        color: var(--dark);
+      }
+    }
+  }
+
+  #link-stack-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+
+    stencil-route-link a {
+      color: var(--light);
+      text-decoration: none;
+      line-height: 1.6;
+
+      &:hover {
+        color: var(--dark);
+      }
+    }
+  }
+}

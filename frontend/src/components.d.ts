@@ -26,7 +26,22 @@ export namespace Components {
     interface CBanner {
         "hidden": boolean;
     }
+    interface FooterComp {
+    }
+    interface HeaderComp {
+    }
     interface LatestBlogList {
+    }
+    interface NavbarComp {
+    }
+    interface NavbarMenuComp {
+        "visible": boolean;
+    }
+    interface NavbarMenuItemComp {
+    }
+    interface PageComp {
+    }
+    interface TextContentComp {
     }
 }
 declare global {
@@ -84,11 +99,53 @@ declare global {
         prototype: HTMLCBannerElement;
         new (): HTMLCBannerElement;
     };
+    interface HTMLFooterCompElement extends Components.FooterComp, HTMLStencilElement {
+    }
+    var HTMLFooterCompElement: {
+        prototype: HTMLFooterCompElement;
+        new (): HTMLFooterCompElement;
+    };
+    interface HTMLHeaderCompElement extends Components.HeaderComp, HTMLStencilElement {
+    }
+    var HTMLHeaderCompElement: {
+        prototype: HTMLHeaderCompElement;
+        new (): HTMLHeaderCompElement;
+    };
     interface HTMLLatestBlogListElement extends Components.LatestBlogList, HTMLStencilElement {
     }
     var HTMLLatestBlogListElement: {
         prototype: HTMLLatestBlogListElement;
         new (): HTMLLatestBlogListElement;
+    };
+    interface HTMLNavbarCompElement extends Components.NavbarComp, HTMLStencilElement {
+    }
+    var HTMLNavbarCompElement: {
+        prototype: HTMLNavbarCompElement;
+        new (): HTMLNavbarCompElement;
+    };
+    interface HTMLNavbarMenuCompElement extends Components.NavbarMenuComp, HTMLStencilElement {
+    }
+    var HTMLNavbarMenuCompElement: {
+        prototype: HTMLNavbarMenuCompElement;
+        new (): HTMLNavbarMenuCompElement;
+    };
+    interface HTMLNavbarMenuItemCompElement extends Components.NavbarMenuItemComp, HTMLStencilElement {
+    }
+    var HTMLNavbarMenuItemCompElement: {
+        prototype: HTMLNavbarMenuItemCompElement;
+        new (): HTMLNavbarMenuItemCompElement;
+    };
+    interface HTMLPageCompElement extends Components.PageComp, HTMLStencilElement {
+    }
+    var HTMLPageCompElement: {
+        prototype: HTMLPageCompElement;
+        new (): HTMLPageCompElement;
+    };
+    interface HTMLTextContentCompElement extends Components.TextContentComp, HTMLStencilElement {
+    }
+    var HTMLTextContentCompElement: {
+        prototype: HTMLTextContentCompElement;
+        new (): HTMLTextContentCompElement;
     };
     interface HTMLElementTagNameMap {
         "app-about-us": HTMLAppAboutUsElement;
@@ -100,7 +157,14 @@ declare global {
         "blog-component": HTMLBlogComponentElement;
         "blog-list": HTMLBlogListElement;
         "c-banner": HTMLCBannerElement;
+        "footer-comp": HTMLFooterCompElement;
+        "header-comp": HTMLHeaderCompElement;
         "latest-blog-list": HTMLLatestBlogListElement;
+        "navbar-comp": HTMLNavbarCompElement;
+        "navbar-menu-comp": HTMLNavbarMenuCompElement;
+        "navbar-menu-item-comp": HTMLNavbarMenuItemCompElement;
+        "page-comp": HTMLPageCompElement;
+        "text-content-comp": HTMLTextContentCompElement;
     }
 }
 declare namespace LocalJSX {
@@ -124,7 +188,22 @@ declare namespace LocalJSX {
     interface CBanner {
         "hidden"?: boolean;
     }
+    interface FooterComp {
+    }
+    interface HeaderComp {
+    }
     interface LatestBlogList {
+    }
+    interface NavbarComp {
+    }
+    interface NavbarMenuComp {
+        "visible"?: boolean;
+    }
+    interface NavbarMenuItemComp {
+    }
+    interface PageComp {
+    }
+    interface TextContentComp {
     }
     interface IntrinsicElements {
         "app-about-us": AppAboutUs;
@@ -136,7 +215,14 @@ declare namespace LocalJSX {
         "blog-component": BlogComponent;
         "blog-list": BlogList;
         "c-banner": CBanner;
+        "footer-comp": FooterComp;
+        "header-comp": HeaderComp;
         "latest-blog-list": LatestBlogList;
+        "navbar-comp": NavbarComp;
+        "navbar-menu-comp": NavbarMenuComp;
+        "navbar-menu-item-comp": NavbarMenuItemComp;
+        "page-comp": PageComp;
+        "text-content-comp": TextContentComp;
     }
 }
 export { LocalJSX as JSX };
@@ -152,7 +238,14 @@ declare module "@stencil/core" {
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
             "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
             "c-banner": LocalJSX.CBanner & JSXBase.HTMLAttributes<HTMLCBannerElement>;
+            "footer-comp": LocalJSX.FooterComp & JSXBase.HTMLAttributes<HTMLFooterCompElement>;
+            "header-comp": LocalJSX.HeaderComp & JSXBase.HTMLAttributes<HTMLHeaderCompElement>;
             "latest-blog-list": LocalJSX.LatestBlogList & JSXBase.HTMLAttributes<HTMLLatestBlogListElement>;
+            "navbar-comp": LocalJSX.NavbarComp & JSXBase.HTMLAttributes<HTMLNavbarCompElement>;
+            "navbar-menu-comp": LocalJSX.NavbarMenuComp & JSXBase.HTMLAttributes<HTMLNavbarMenuCompElement>;
+            "navbar-menu-item-comp": LocalJSX.NavbarMenuItemComp & JSXBase.HTMLAttributes<HTMLNavbarMenuItemCompElement>;
+            "page-comp": LocalJSX.PageComp & JSXBase.HTMLAttributes<HTMLPageCompElement>;
+            "text-content-comp": LocalJSX.TextContentComp & JSXBase.HTMLAttributes<HTMLTextContentCompElement>;
         }
     }
 }

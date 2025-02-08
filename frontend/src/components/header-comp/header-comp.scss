@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  height: calc(475px + 4.375rem);
+  background-color: #e8e9ec;
+}
+
+::slotted(h1) {
+  padding: 0;
+  margin: 0;
+  font-family: 'MFBOldstyleR';
+  font-size: 2.25rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+@media screen and (max-width: 768px) {
+  :host {
+    height: calc(188px + 4.75rem);
+  }
+}

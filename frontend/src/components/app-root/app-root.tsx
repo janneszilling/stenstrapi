@@ -80,6 +80,7 @@ export class AppRoot {
               <stencil-route url="/finanzrechner" component="app-finance-site" />
               <stencil-route url="/impressum" component="app-imprint" />
               <stencil-route url="/datenschutz" component="app-privacy" />
+              <stencil-route url="/page-comp" component="page-comp" />
               <stencil-route url="/blog" component="blog-list" />
               <stencil-route url="/:pageName" routeRender={({ match }) => <blog-component page={match!.url}></blog-component>} />
             </stencil-route-switch>
