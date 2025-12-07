@@ -31,18 +31,20 @@ export class AppRoot {
           <div slot="start">
             <div>
               <navbar-menu-comp>
-                <navbar-menu-item-comp>
-                  <stencil-route-link url="/blog">Beiträge</stencil-route-link>
-                </navbar-menu-item-comp>
-                {/* <navbar-menu-item-comp>
+                <div slot="nav-menu">
+                  <navbar-menu-item-comp>
+                    <stencil-route-link url="/blog">Beiträge</stencil-route-link>
+                  </navbar-menu-item-comp>
+                  {/* <navbar-menu-item-comp>
                 <stencil-route-link url="/handbuecher">Handbücher</stencil-route-link>
               </navbar-menu-item-comp> */}
-                <navbar-menu-item-comp>
-                  <stencil-route-link url="/finanzrechner">Finanzrechner</stencil-route-link>
-                </navbar-menu-item-comp>
-                <navbar-menu-item-comp>
-                  <stencil-route-link url="/about">Unser Team</stencil-route-link>
-                </navbar-menu-item-comp>
+                  <navbar-menu-item-comp>
+                    <stencil-route-link url="/finanzrechner">Finanzrechner</stencil-route-link>
+                  </navbar-menu-item-comp>
+                  <navbar-menu-item-comp>
+                    <stencil-route-link url="/about">Unser Team</stencil-route-link>
+                  </navbar-menu-item-comp>
+                </div>
                 <div class="other" slot="group">
                   <stencil-route-link url="/impressum">Impressum</stencil-route-link>
                   <stencil-route-link url="/datenschutz">Datenschutz</stencil-route-link>

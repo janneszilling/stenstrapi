@@ -60,11 +60,13 @@ export class NavbarMenuComp {
             <span></span>
           </button>
           <div class="menu-nav" onClick={() => this.toggleMenu()}>
-            {this.items.map((_, i) => (
-              <li>
-                <slot name={`item-${i}`}></slot>
-              </li>
-            ))}
+            <slot name="nav-menu">
+              {this.items.map((_, i) => (
+                <li>
+                  <slot name={`item-${i}`}></slot>
+                </li>
+              ))}
+            </slot>
             <slot name="group"></slot>
           </div>
         </div>
