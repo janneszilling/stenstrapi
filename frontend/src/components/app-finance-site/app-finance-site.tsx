@@ -17,10 +17,10 @@ export class AppFinanceSite {
   render() {
     return (
       <Host>
-        <div class="finance-header">
-          <p class="subheading">Entdecke unsere</p>
+        <header-comp theme="dark">
+          <p>Entdecke unsere</p>
           <h1>Finanzrechner</h1>
-        </div>
+        </header-comp>
         <div class="grid-wrapper">
           <stencil-route-link url="/finanzrechner/zinsen">
             <div class="grid-item" id="zinsen">

@@ -24,10 +24,10 @@ export class BlogList {
   render() {
     return (
       <Host>
-        <div class="blog-header">
-          <p class="subheading">Spannende</p>
-          <h1>Artikel</h1>
-        </div>
+        <header-comp theme="dark">
+          <p>Spannende</p>
+          <h1>Artikel der Wirtschaft</h1>
+        </header-comp>
         <div class="blog-list-wrapper">
           {this.data === null ? (
             <h1>Keine Beiträge vorhanden</h1>

@@ -117,7 +117,7 @@ export class AppPrivacy {
               europ&auml;ischen Datenschutzniveaus sicherstellen sollen.
             </p>
 
-            <h3>4) Cookies</h3>
+            <h3 id="#cookies">4) Cookies</h3>
 
             <p>
               Um den Besuch unserer Website attraktiv zu gestalten und die Nutzung bestimmter Funktionen zu erm&ouml;glichen, verwenden wir Cookies, also kleine Textdateien, die

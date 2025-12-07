@@ -8,7 +8,23 @@
   width: 100%;
   margin: 0 auto;
   height: calc(475px + 4.375rem);
-  background-color: #e8e9ec;
+  //background-color: #e8e9ec;
+  background-image: linear-gradient(to bottom right, #0e61c4, #3591ff);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+:host(.dark) {
+  color: #f9f9f8;
+
+  ::slotted(p) {
+    font-weight: 400;
+  }
+}
+
+:host(.light) {
+  color: var(--text);
 }
 
 ::slotted(h1) {
@@ -17,7 +33,15 @@
   font-family: 'MFBOldstyleR';
   font-size: 2.25rem;
   text-decoration: none;
-  color: var(--text);
+}
+
+::slotted(p) {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
 }
 
 @media screen and (max-width: 768px) {

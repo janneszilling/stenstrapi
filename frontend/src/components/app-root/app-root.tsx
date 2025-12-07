@@ -8,7 +8,6 @@ import { cookieSvc } from '../../services/cookie.service';
 })
 export class AppRoot {
   data?: any;
-  private menu?: HTMLDivElement;
 
   scrollToTop() {
     window.scrollTo(0, 0);
@@ -25,52 +24,40 @@ export class AppRoot {
     cookieSvc.setGoogleAnalyticsCookie();
   }
 
-  toggleMenu() {
-    if (window.innerWidth < 1200 && this.menu.style.display === 'flex') {
-      this.menu.style.display = 'none';
-      console.log('window.innerWidth1', window.innerWidth);
-    } else {
-      this.menu.style.display = 'flex';
-      console.log('window.innerWidth2', window.innerWidth);
-    }
-  }
-
   render() {
     return (
       <div>
-        <header>
-          <div class="nav">
-            <div class="nav-wrapper">
-              <div class="logo">
-                <stencil-route-link url="/">
-                  <img src={getAssetPath('../../assets/st-logo-dark.svg')} alt="Stockrain" />
-                </stencil-route-link>
+        <navbar-comp>
+          <div slot="start">
+            <navbar-menu-comp>
+              <navbar-menu-item-comp>
+                <stencil-route-link url="/blog">Beiträge</stencil-route-link>
+              </navbar-menu-item-comp>
+              {/* <navbar-menu-item-comp>
+                <stencil-route-link url="/handbuecher">Handbücher</stencil-route-link>
+              </navbar-menu-item-comp> */}
+              <navbar-menu-item-comp>
+                <stencil-route-link url="/finanzrechner">Finanzrechner</stencil-route-link>
+              </navbar-menu-item-comp>
+              <navbar-menu-item-comp>
+                <stencil-route-link url="/about">Unser Team</stencil-route-link>
+              </navbar-menu-item-comp>
+              <div class="other" slot="group">
+                <stencil-route-link url="/impressum">Impressum</stencil-route-link>
+                <stencil-route-link url="/datenschutz">Datenschutz</stencil-route-link>
+                <stencil-route-link url="/datenschutz#cookies">Cookies</stencil-route-link>
+                {/*<button>@stockraininvest</button>*/}
               </div>
-              <div class="menu-btn" onClick={this.toggleMenu.bind(this)}>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <div class="menu" ref={el => (this.menu = el as HTMLDivElement)}>
-              <stencil-route-link url="/blog" onClick={this.toggleMenu.bind(this)}>
-                Blog
-              </stencil-route-link>
-              <span class="disabled">
-                <stencil-route-link url="/#" onClick={this.toggleMenu.bind(this)}>
-                  Handbuch<span class="soon-lable">Soon</span>
-                </stencil-route-link>
-              </span>
-              <span>
-                <stencil-route-link url="/finanzrechner" onClick={this.toggleMenu.bind(this)}>
-                  Finanzrechner<span class="soon-lable">Soon</span>
-                </stencil-route-link>
-              </span>
-              <stencil-route-link url="/about" onClick={this.toggleMenu.bind(this)}>
-                Über uns
-              </stencil-route-link>
-            </div>
+            </navbar-menu-comp>
           </div>
-        </header>
+
+          <div slot="logo">
+            <stencil-route-link url="/">
+              <img src="../../assets/st-logo-dark.svg" alt="Stockrain" width={50} height={54} />
+            </stencil-route-link>
+          </div>
+          <div slot="end"></div>
+        </navbar-comp>
 
         <main>
           <stencil-router>

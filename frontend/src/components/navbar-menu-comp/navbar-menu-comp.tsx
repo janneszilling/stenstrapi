@@ -28,7 +28,7 @@ export class NavbarMenuComp {
   }
 
   componentWillLoad() {
-    console.log('this.el', this.el);
+    //console.log('this.el', this.el);
     console.log('this.el.shadowRoot', this.el.shadowRoot);
 
     this.el.shadowRoot.addEventListener('slotchange', () => {
@@ -45,7 +45,7 @@ export class NavbarMenuComp {
   }
 
   render() {
-    console.log('this.items', this.items);
+    //console.log('this.items', this.items);
     return (
       <Host>
         <slot></slot>
@@ -60,7 +60,7 @@ export class NavbarMenuComp {
             <span></span>
             <span></span>
           </button>
-          <div class="menu-nav">
+          <div class="menu-nav" onClick={() => this.toggleMenu()}>
             {this.items.map((_, i) => (
               <li>
                 <slot name={`item-${i}`}></slot>

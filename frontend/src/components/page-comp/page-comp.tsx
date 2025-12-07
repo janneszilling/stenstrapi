@@ -9,7 +9,7 @@ export class PageComp {
   render() {
     return (
       <Host>
-        <navbar-comp>
+        {/*<navbar-comp>
           <div slot="start">
             <navbar-menu-comp>
               <navbar-menu-item-comp>
@@ -39,14 +39,22 @@ export class PageComp {
             </stencil-route-link>
           </div>
           <div slot="end"></div>
-        </navbar-comp>
+        </navbar-comp>*/}
         <header-comp>
           <h1>Page Component</h1>
         </header-comp>
         <main>
           <p>This is a page component.</p>
+          <coverflow-slider-comp>
+            <coverflow-slide-comp>
+              <h1>Hello</h1>
+            </coverflow-slide-comp>
+            <coverflow-slide-comp>
+              <h1>Slider</h1>
+            </coverflow-slide-comp>
+          </coverflow-slider-comp>
         </main>
-        <footer-comp>
+        {/*<footer-comp>
           <div slot="start">
             <button>@stockraininvest</button>
           </div>
@@ -63,7 +71,7 @@ export class PageComp {
               <stencil-route-link url="/cookies">Cookies</stencil-route-link>
             </div>
           </div>
-        </footer-comp>
+        </footer-comp>*/}
       </Host>
     );
   }

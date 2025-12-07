@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'header-comp',
@@ -6,9 +6,11 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class HeaderComp {
+  @Prop({ reflect: true }) readonly theme?: string = 'dark';
+
   render() {
     return (
-      <Host>
+      <Host class={{ [`${this.theme}`]: true }}>
         <slot></slot>
       </Host>
     );
