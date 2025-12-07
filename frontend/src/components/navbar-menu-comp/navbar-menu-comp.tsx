@@ -29,7 +29,7 @@ export class NavbarMenuComp {
 
   componentWillLoad() {
     //console.log('this.el', this.el);
-    console.log('this.el.shadowRoot', this.el.shadowRoot);
+    //console.log('this.el.shadowRoot', this.el.shadowRoot);
 
     this.el.shadowRoot.addEventListener('slotchange', () => {
       this.items = Array.from(this.el.querySelectorAll('navbar-menu-item-comp'));
@@ -59,16 +59,14 @@ export class NavbarMenuComp {
             <span></span>
             <span></span>
           </button>
-          <slot name="menu">
-            <div class="menu-nav" onClick={() => this.toggleMenu()}>
-              {this.items.map((_, i) => (
-                <li>
-                  <slot name={`item-${i}`}></slot>
-                </li>
-              ))}
-              <slot name="group"></slot>
-            </div>
-          </slot>
+          <div class="menu-nav" onClick={() => this.toggleMenu()}>
+            {this.items.map((_, i) => (
+              <li>
+                <slot name={`item-${i}`}></slot>
+              </li>
+            ))}
+            <slot name="group"></slot>
+          </div>
         </div>
       </Host>
     );
