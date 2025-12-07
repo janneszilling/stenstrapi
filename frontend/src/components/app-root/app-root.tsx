@@ -29,26 +29,28 @@ export class AppRoot {
       <div>
         <navbar-comp>
           <div slot="start">
-            <navbar-menu-comp>
-              <navbar-menu-item-comp>
-                <stencil-route-link url="/blog">Beiträge</stencil-route-link>
-              </navbar-menu-item-comp>
-              {/* <navbar-menu-item-comp>
+            <div>
+              <navbar-menu-comp>
+                <navbar-menu-item-comp>
+                  <stencil-route-link url="/blog">Beiträge</stencil-route-link>
+                </navbar-menu-item-comp>
+                {/* <navbar-menu-item-comp>
                 <stencil-route-link url="/handbuecher">Handbücher</stencil-route-link>
               </navbar-menu-item-comp> */}
-              <navbar-menu-item-comp>
-                <stencil-route-link url="/finanzrechner">Finanzrechner</stencil-route-link>
-              </navbar-menu-item-comp>
-              <navbar-menu-item-comp>
-                <stencil-route-link url="/about">Unser Team</stencil-route-link>
-              </navbar-menu-item-comp>
-              <div class="other" slot="group">
-                <stencil-route-link url="/impressum">Impressum</stencil-route-link>
-                <stencil-route-link url="/datenschutz">Datenschutz</stencil-route-link>
-                <stencil-route-link url="/datenschutz#cookies">Cookies</stencil-route-link>
-                {/*<button>@stockraininvest</button>*/}
-              </div>
-            </navbar-menu-comp>
+                <navbar-menu-item-comp>
+                  <stencil-route-link url="/finanzrechner">Finanzrechner</stencil-route-link>
+                </navbar-menu-item-comp>
+                <navbar-menu-item-comp>
+                  <stencil-route-link url="/about">Unser Team</stencil-route-link>
+                </navbar-menu-item-comp>
+                <div class="other" slot="group">
+                  <stencil-route-link url="/impressum">Impressum</stencil-route-link>
+                  <stencil-route-link url="/datenschutz">Datenschutz</stencil-route-link>
+                  <stencil-route-link url="/datenschutz#cookies">Cookies</stencil-route-link>
+                  {/*<button>@stockraininvest</button>*/}
+                </div>
+              </navbar-menu-comp>
+            </div>
           </div>
 
           <div slot="logo">
