@@ -26,9 +26,14 @@ export namespace Components {
     interface CBanner {
         "hidden": boolean;
     }
+    interface CoverflowSlideComp {
+    }
+    interface CoverflowSliderComp {
+    }
     interface FooterComp {
     }
     interface HeaderComp {
+        "theme"?: string;
     }
     interface LatestBlogList {
     }
@@ -99,6 +104,18 @@ declare global {
         prototype: HTMLCBannerElement;
         new (): HTMLCBannerElement;
     };
+    interface HTMLCoverflowSlideCompElement extends Components.CoverflowSlideComp, HTMLStencilElement {
+    }
+    var HTMLCoverflowSlideCompElement: {
+        prototype: HTMLCoverflowSlideCompElement;
+        new (): HTMLCoverflowSlideCompElement;
+    };
+    interface HTMLCoverflowSliderCompElement extends Components.CoverflowSliderComp, HTMLStencilElement {
+    }
+    var HTMLCoverflowSliderCompElement: {
+        prototype: HTMLCoverflowSliderCompElement;
+        new (): HTMLCoverflowSliderCompElement;
+    };
     interface HTMLFooterCompElement extends Components.FooterComp, HTMLStencilElement {
     }
     var HTMLFooterCompElement: {
@@ -157,6 +174,8 @@ declare global {
         "blog-component": HTMLBlogComponentElement;
         "blog-list": HTMLBlogListElement;
         "c-banner": HTMLCBannerElement;
+        "coverflow-slide-comp": HTMLCoverflowSlideCompElement;
+        "coverflow-slider-comp": HTMLCoverflowSliderCompElement;
         "footer-comp": HTMLFooterCompElement;
         "header-comp": HTMLHeaderCompElement;
         "latest-blog-list": HTMLLatestBlogListElement;
@@ -188,9 +207,14 @@ declare namespace LocalJSX {
     interface CBanner {
         "hidden"?: boolean;
     }
+    interface CoverflowSlideComp {
+    }
+    interface CoverflowSliderComp {
+    }
     interface FooterComp {
     }
     interface HeaderComp {
+        "theme"?: string;
     }
     interface LatestBlogList {
     }
@@ -215,6 +239,8 @@ declare namespace LocalJSX {
         "blog-component": BlogComponent;
         "blog-list": BlogList;
         "c-banner": CBanner;
+        "coverflow-slide-comp": CoverflowSlideComp;
+        "coverflow-slider-comp": CoverflowSliderComp;
         "footer-comp": FooterComp;
         "header-comp": HeaderComp;
         "latest-blog-list": LatestBlogList;
@@ -238,6 +264,8 @@ declare module "@stencil/core" {
             "blog-component": LocalJSX.BlogComponent & JSXBase.HTMLAttributes<HTMLBlogComponentElement>;
             "blog-list": LocalJSX.BlogList & JSXBase.HTMLAttributes<HTMLBlogListElement>;
             "c-banner": LocalJSX.CBanner & JSXBase.HTMLAttributes<HTMLCBannerElement>;
+            "coverflow-slide-comp": LocalJSX.CoverflowSlideComp & JSXBase.HTMLAttributes<HTMLCoverflowSlideCompElement>;
+            "coverflow-slider-comp": LocalJSX.CoverflowSliderComp & JSXBase.HTMLAttributes<HTMLCoverflowSliderCompElement>;
             "footer-comp": LocalJSX.FooterComp & JSXBase.HTMLAttributes<HTMLFooterCompElement>;
             "header-comp": LocalJSX.HeaderComp & JSXBase.HTMLAttributes<HTMLHeaderCompElement>;
             "latest-blog-list": LocalJSX.LatestBlogList & JSXBase.HTMLAttributes<HTMLLatestBlogListElement>;

@@ -19,12 +19,12 @@ export class AppAboutUs {
   render() {
     return (
       <div class="about-wrapper">
-        <div class="home-header">
-          <p class="subheading">Wer steckt hinter stockrain</p>
+        <header-comp theme="dark">
+          <p>Wer steckt hinter stockrain</p>
           <h1>Unser Team</h1>
-        </div>
+        </header-comp>
         <div class="about-text-wrapper">
-          <div class="about-text">
+          <text-content-comp>
             <h2>Willkommen bei Stockrain - dem Blog für Finanzen und Wirtschaft!</h2>
             <p>
               Wir sind eine leidenschaftliche Gruppe von Finanzexperten, Wirtschaftsinteressierten und Investoren, die es sich zur Aufgabe gemacht haben, komplexe finanzielle
@@ -52,7 +52,7 @@ export class AppAboutUs {
               Wirtschaftswelt. Gemeinsam werden wir uns weiterentwickeln, lernen und erfolgreich sein.
             </p>
             <p>Stockrain - Der Treffpunkt für Finanzen und Wirtschaft. Wir freuen uns darauf, dich an Bord zu haben!</p>
-          </div>
+          </text-content-comp>
         </div>
       </div>
     );

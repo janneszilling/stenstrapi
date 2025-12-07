@@ -26,10 +26,10 @@ export class AppHome {
   render() {
     return (
       <div class="app-home">
-        <div class="home-header">
-          <p class="subheading">Der Wirtschafts Blog</p>
-          <h1>Educate Economy</h1>
-        </div>
+        <header-comp theme="dark">
+          <p>Wissen schafft Erfolg</p>
+          <h1>Bildung für die Wirtschaft</h1>
+        </header-comp>
         <div class="lastest-posts">
           <latest-blog-list></latest-blog-list>
         </div>
