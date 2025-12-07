@@ -45,7 +45,6 @@ export class NavbarMenuComp {
   }
 
   render() {
-    //console.log('this.items', this.items);
     return (
       <Host>
         <slot></slot>
