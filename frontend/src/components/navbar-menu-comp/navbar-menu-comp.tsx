@@ -47,7 +47,7 @@ export class NavbarMenuComp {
   render() {
     return (
       <Host>
-        <slot></slot>
+        {/* <slot></slot> */}
         <button class="menu-icon" onClick={() => this.toggleMenu()}>
           <span></span>
           <span></span>
@@ -59,14 +59,16 @@ export class NavbarMenuComp {
             <span></span>
             <span></span>
           </button>
-          <div class="menu-nav" onClick={() => this.toggleMenu()}>
-            {this.items.map((_, i) => (
-              <li>
-                <slot name={`item-${i}`}></slot>
-              </li>
-            ))}
-            <slot name="group"></slot>
-          </div>
+          <slot name="menu">
+            <div class="menu-nav" onClick={() => this.toggleMenu()}>
+              {this.items.map((_, i) => (
+                <li>
+                  <slot name={`item-${i}`}></slot>
+                </li>
+              ))}
+              <slot name="group"></slot>
+            </div>
+          </slot>
         </div>
       </Host>
     );
